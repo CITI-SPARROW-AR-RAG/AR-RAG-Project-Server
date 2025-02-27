@@ -4,16 +4,24 @@ import ollama
 from pymilvus import MilvusClient
 import uvicorn
 import numpy as np
+from dotenv import load_dotenv
+import os
 
 app = FastAPI()
 
-# Initialize Milvus client
-milvus_client = MilvusClient(uri="http://localhost:19530")
-COLLECTION_NAME = "vanessa_rag_collection"
+# load .env variable
+load_dotenv()
 
-# Model configurations
-EMBEDDING_MODEL = "nomic-embed-text:latest"
-LLM_MODEL = "qwen2.5:14b"
+MILVUS_URL = os.getenv("MILVUS_URL")
+COLLECTION_NAME = os.getenv("COLLECTION_NAME")
+EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL")
+LLM_MODEL = os.getenv("LLM_MODEL")
+SERVER_HOST_HOST = os.getenv("SERVER_HOST_HOST")
+SERVER_HOST_PORT = os.getenv("SERVER_HOST_PORT")
+
+
+# Initialize Milvus client
+milvus_client = MilvusClient(uri=MILVUS_URL)
 
 class QueryRequest(BaseModel):
     question: str
@@ -97,4 +105,4 @@ async def query_rag(request: QueryRequest):
         return {"error": str(e)}
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host=SERVER_HOST_HOST, port=SERVER_HOST_PORT)
