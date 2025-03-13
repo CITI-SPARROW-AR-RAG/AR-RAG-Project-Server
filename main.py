@@ -6,8 +6,14 @@ import uvicorn
 import numpy as np
 from dotenv import load_dotenv
 import os
+import logging
+
+
 
 app = FastAPI()
+logger = logging.getLogger(__name__)
+logging.basicConfig(filename='RAG.log', level=logging.INFO)
+
 
 # load .env variable
 load_dotenv()
@@ -17,8 +23,9 @@ COLLECTION_NAME = os.getenv("COLLECTION_NAME")
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL")
 LLM_MODEL = os.getenv("LLM_MODEL")
 SERVER_HOST_HOST = os.getenv("SERVER_HOST_HOST")
-SERVER_HOST_PORT = os.getenv("SERVER_HOST_PORT")
+SERVER_HOST_PORT = int(os.getenv("SERVER_HOST_PORT"))
 
+#logging.info("MILVUS_URL: %s, Collection: %s", MILVUS_URL, COLLECTION_NAME)
 
 # Initialize Milvus client
 milvus_client = MilvusClient(uri=MILVUS_URL)
@@ -33,6 +40,7 @@ class QueryResponse(BaseModel):
 def emb_text(text: str) -> list[float]:
     """Generate embeddings using Ollama"""
     response = ollama.embeddings(model=EMBEDDING_MODEL, prompt=text)
+    #logger.info('reponse: ', response)
     return response["embedding"]
 
 def format_prompt(context: str, question: str) -> list[dict]:
@@ -61,6 +69,7 @@ def format_prompt(context: str, question: str) -> list[dict]:
 def rerank_chunks(question_embedding, retrieved_chunks):
     """Rerank the chunks based on similarity to the question embedding"""
     similarities = []
+    logging.info(f"retrieved chunks: {retrieved_chunks} ")
     for chunk in retrieved_chunks:
         chunk_embedding = emb_text(chunk)  # Get embedding for each chunk
         similarity = np.dot(question_embedding, chunk_embedding)  # Cosine similarity
@@ -68,10 +77,12 @@ def rerank_chunks(question_embedding, retrieved_chunks):
     
     # Sort chunks by similarity in descending order
     ranked_chunks = [x for _, x in sorted(zip(similarities, retrieved_chunks), reverse=True)]
+    logging.info(f"ranked: {ranked_chunks}")
     return ranked_chunks
 
 @app.post("/query")
 async def query_rag(request: QueryRequest):
+    logging.info(f"question : {request.question}")
     try:
         # 1. Create embedding for the question
         question_embedding = emb_text(request.question)
@@ -84,7 +95,6 @@ async def query_rag(request: QueryRequest):
             search_params={"metric_type": "IP", "params": {}},
             output_fields=["text"]
         )
-        
         # 3. Format retrieved contexts
         retrieved_texts = [res["entity"]["text"] for res in search_results[0]]
         
