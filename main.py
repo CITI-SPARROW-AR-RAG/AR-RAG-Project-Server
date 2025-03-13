@@ -7,12 +7,28 @@ import numpy as np
 from dotenv import load_dotenv
 import os
 import logging
+import time
 
 
 
 app = FastAPI()
+
+
+# Set up logging configuration
+logging.basicConfig(
+    filename='RAG.log',                         # Log to file
+    format='%(asctime)s - %(message)s',         # Add timestamp to each log message
+    level=logging.INFO                          # Log level
+)
+
+# Create a logger instance
 logger = logging.getLogger(__name__)
-logging.basicConfig(filename='RAG.log', level=logging.INFO)
+
+# Log the timestamp once at the beginning
+initial_timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
+logger.info(f"Start of logging session at: {initial_timestamp}")
+
+
 
 
 # load .env variable
@@ -106,11 +122,16 @@ async def query_rag(request: QueryRequest):
         messages = format_prompt(context, request.question)
         response = ollama.chat(model=LLM_MODEL, messages=messages) 
         
-        return QueryResponse(
+        
+        logging.info(f"LLM response: {response['message']['content']}")
+
+        return QueryResponse(   
             answer=response["message"]["content"],
             sources=reranked_texts  # Return the reranked sources
         )
     
+         
+
     except Exception as e:
         return {"error": str(e)}
 
