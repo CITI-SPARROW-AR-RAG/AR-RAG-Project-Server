@@ -1,0 +1,1849 @@
+Chunk 1:
+# BLASER 
+
+## we cut faster
+
+## USER MANUAL
+
+## FOR <br> MV154 / MV154APC series, MV204 series \& UX300 <br> Heidenhain iTNC530
+# CONTENTS 
+
+1. Safety ..... 5
+1.1 Intended Use ..... 5
+1.2 Important Safety Notice and Warning ..... 5
+1.2.1 Safe installation ..... 5
+1.2.2 Machine guarding ..... 6
+1.2.3 Software ..... 6
+1.2.4 Authorized personnel and training ..... 6
+1.2.5 Safe working practice ..... 6
+1.3 Safety Cautions List ..... 7
+1.4 Safety Devices ..... 10
+1.4.1 Emergency Stop ..... 10
+1.4.2 Guard ..... 10
+1.4.3 Window ..... 11
+1.4.4 Door Interlock ..... 11
+1.4.5 Cabinet door switch ..... 11
+1.5 Warning Labels ..... 12
+1.6 Residual Risks ..... 12
+2. Introduction ..... 13
+2.1 Consumption Material ..... 13
+2.1.1 Lubrication oil for linear rail and ballscrew ..... 13
+2.1.2 Lubrication oil for pneumatic system ..... 13
+2.1.3 Cutting fluid ..... 13
+2.1.4 Filter for cutting fluid ..... 13
+2.1.5 Coolant of cooler ..... 14
+2.2 Operation Panel ..... 15
+2.3 Buttons/Knobs on chip conveyor
+
+Chunk 2:
+luid ..... 13
+2.1.4 Filter for cutting fluid ..... 13
+2.1.5 Coolant of cooler ..... 14
+2.2 Operation Panel ..... 15
+2.3 Buttons/Knobs on chip conveyor ..... 17
+2.4 Buttons/Knobs for Tool Magazine ..... 17
+2.5 Spindle Tooling ..... 17
+2.6 Tool Magazine and ATC ..... 20
+2.7 Cooling System ..... 20
+2.8 Chip Removal ..... 20
+3. Installation ..... 21
+3.1 Foundation Preparation ..... 21
+3.2 Power Preparation ..... 21
+3.2.1 Line Configuration ..... 21
+3.3 Unpacking ..... 22
+3.4 Machine Lifting ..... 22
+3.5 Leveling of Machine ..... 22
+3.6 Before Power ON ..... 22
+3.6.1 Grounding ..... 22
+3.6.2 Power connection ..... 24
+3.6.3 Misc. ..... 25
+3.7 First Time Power ON ..... 26
+3.7.1 Rotation Direction of Motors ..... 26
+3.7.2 Spindle Run-in. ..... 26
+4. Operation ..... 27
+4.1 Power ON/OFF ..... 27
+4.2 Reference the Machine ..... 27
+4.3 Worklight ON/OFF ..... 28
+4.4 Machine Warm-up ..... 28
+4.5 Spindle Operation ..... 28
+4.6 Spindle Warm-up ..... 29
+4.7 Interrupting Operation ..... 29
+4.8 Jobs
+
+Chunk 3:
+ON/OFF ..... 28
+4.4 Machine Warm-up ..... 28
+4.5 Spindle Operation ..... 28
+4.6 Spindle Warm-up ..... 29
+4.7 Interrupting Operation ..... 29
+4.8 Jobs Finished ..... 29
+4.9 Jog Axis. ..... 30
+4.10 Jog Axis by MPG ..... 32
+4.11 Tool Data Setting ..... 34
+4.12 Work Coordinate Setting ..... 35
+4.13 Door Interlock Overriding ..... 36
+4.14 Tool Loading/Unloading ..... 37
+4.15 ATC Operation ..... 37
+4.16 Coolant Operation ..... 38
+4.17 Chip Removal Operation ..... 38
+4.18 Auto Pallet Change System ..... 38
+5. Maintenance ..... 39
+5.1 Routine Inspection ..... 40
+5.1.1 Daily ..... 40
+5.1.2 Weekly (In addition to daily routine) ..... 40
+5.1.3 Yearly (In addition to weekly routine) ..... 40
+5.2 Lubrication ..... 40
+5.2.1 Automatic Lubrication System ..... 40
+5.2.2 FRL unit ..... 41
+5.3 Cleaning ..... 41
+5.3.1 Machine Interior: ..... 41
+5.3.2 Coolant Filtering: ..... 41
+6. Trouble shooting ..... 42
+6.1 ATC system: ..... 42
+6.2 Cooling, Coolant and lubrication system. ..... 42
+6.3 Door switch
+
+Chunk 4:
+oolant Filtering: ..... 41
+6. Trouble shooting ..... 42
+6.1 ATC system: ..... 42
+6.2 Cooling, Coolant and lubrication system. ..... 42
+6.3 Door switch system ..... 43
+7. Appendix ..... 44
+7.1 Power requirements ..... 44
+7.2 Pneumatic requirements ..... 44
+7.3 Spindle run-in procedures ..... 45
+7.4 Functions of operation panel ..... 46
+7.5 M-function Codes ..... 57
+7.6 User Definable Parameters ..... 58
+7.6.1 Timer table ..... 58
+7.6.2 Option bit parameter ..... 59
+7.6.3 Tool setting in tool table ..... 60
+7.7 Machine floor space ..... 62
+7.8 ATC service operation ..... 66
+7.9 Table C A axes service-points (Table Side) ..... 67
+7.10 Table C A axes datum setting : (check method) ..... 69
+# 1. Safety 
+
+### 1.1 Intended Use
+
+This machine is a numerically controlled machine tool designed to shape cold metal by the application of rotating cutting tools capable of performing two or more machining processes (e.g. boring, drilling, milling, thread tapping) at one set-up of a workpiece and
+
+Chunk 5:
+cutting tools capable of performing two or more machining processes (e.g. boring, drilling, milling, thread tapping) at one set-up of a workpiece and incorporating automatic facilities to:
+
+Select and change tools from a magazine
+Change the position of the workpiece relative to the spindle mounted cutter.
+Select and apply spindle speeds and axis feeds
+Control ancillary services (e.g. coolant flow)
+
+This machine is intended for use in an industrial environment and must not be used in the residential, commercial and light industrial environment.
+
+Materials to be cut in this machine are: Steel, Iron, Iron casting, Bronze, Brass, Copper, and Aluminium.
+Materials not suitable to be cut in this machine are: Graphite, Wood, Plastic,
+
+### 1.2 Important Safety Notice and Warning
+
+It is the user's responsibility to be acquainted with the legal obligations and requirements in the use and application of the machine.
+
+### 1.2.1 Safe installation
+
+It is the customer's responsibility to ensure the
+
+Chunk 6:
+bligations and requirements in the use and application of the machine.
+
+### 1.2.1 Safe installation
+
+It is the customer's responsibility to ensure the machine is installed in a safe operating position, with all service pipes and cables clear of the operation area so as not to cause a hazard. Access must be allowed for safe maintenance, swarf and oil disposal including safe stacking of machined and un-machined components.
+# 1.2.2 Machine guarding 
+
+This Machine is fitted with completely enclosed guards as standard. In certain cases and tooling applications additional guarding may have to be provided by the user.
+The standard machine guarding has special safety interlocks on the guard doors that comply with the Machinery Directive. Guards and interlocks must be kept fully maintained and tested by the customer and shall not be removed.
+
+The guards are made with clear observation windows having high impact resistance to provide operator safety and a clear unobstructed view of the
+
+Chunk 7:
+ved.
+
+The guards are made with clear observation windows having high impact resistance to provide operator safety and a clear unobstructed view of the operations in process. The opening of any guard door provides access to potential hazard areas. Opening of the front working area guard doors is not allowed whilst the spindle is rotating but it is still possible to manually initiate axis movements whilst these doors are open albeit at a reduced traverse rate. Extreme care must therefore be used at all times.
+
+### 1.2.3 Software
+
+Unauthorized changing of machines software or control parameters is hazardous and is not permitted. The machine maker will not accept any liability whatsoever for unauthorized changes in this area.
+
+### 1.2.4 Authorized personnel and training
+
+Operating, service and maintenance engineers shall be authorized by the 'User Company' and properly trained in the use of the machine.
+
+### 1.2.5 Safe working practice
+
+Workholding devices, lifting equipment, tooling and
+
+Chunk 8:
+e 'User Company' and properly trained in the use of the machine.
+
+### 1.2.5 Safe working practice
+
+Workholding devices, lifting equipment, tooling and their use shall be the responsibility of the user. It is the user's responsibility to protect against the hazards caused by swarf, leaking oil or coolant and their use.
+
+Use of proprietary oil or coolant is the responsibility of the user. Special instructions from the suppliers concerning their use should
+be carefully read and understood before use.
+
+To prevent bodily injury, safe working practices should be employed when operating or servicing the machine.
+
+# 1.3 Safety Cautions List 
+
+It is the user's responsibility to ensure all local regulations and safety instructions are followed.
+Users should consult with their own safety representative to ensure that all such regulations are known and acted upon.
+DON'T run the machine until you have made clear to your supervisor that you understand the potential hazard of spindle rotation, the
+
+Chunk 9:
+n and acted upon.
+DON'T run the machine until you have made clear to your supervisor that you understand the potential hazard of spindle rotation, the throwing of coolant and the throwing of swarf from the cutting process.
+DON'T run the machine until you have read and understood all manuals provided with the machine.
+DON'T run the machine until you have read and understood all the machine and control keys.
+DON'T run the machine for the first time without a qualified instructor. Ask your supervisor for help when you need it.
+PROTECT your eyes. Wear safety glasses with side shields at all times.
+DON'T get caught in moving parts. Remove watches, rings, jewellery, neckties and loose fitting clothes.
+PROTECT your head. Wear a safety helmet when working near overhead hazards.
+KEEP your hair away from moving parts.
+PROTECT your feet. Always wear safety shoes with steel toes and oil resistant soles.
+Gloves are easily caught in moving parts. TAKE THEM OFF before you turns on the machine.
+Loose
+
+Chunk 10:
+r safety shoes with steel toes and oil resistant soles.
+Gloves are easily caught in moving parts. TAKE THEM OFF before you turns on the machine.
+Loose objects can become flying projectiles. REMOVE all loose items (wrenches, chuck keys, rags etc.) from the machine before starting. NEVER operate a machine tool after taking strong medication, using non-prescription drugs, prescription drugs or consume alcohol which may impair concentration.
+ALWAYS make sure the working and cutting zone is safeguarded. PROTECT your hands. Make sure the spindle is stopped before
+manually changing a tool.
+
+PROTECT your hands. Make sure the spindle is stopped before manually changing a workpiece.
+PROTECT your hands. Make sure the spindle is stopped before manually clearing away swarf or oil. Use a brush or chip scraper. NEVER use you hands.
+PROTECT your hands. Make sure the spindle is stopped before manually adjusting the work piece or fixture or coolant nozzle.
+PROTECT your hands. Make sure the spindle is
+
+Chunk 11:
+. Make sure the spindle is stopped before manually adjusting the work piece or fixture or coolant nozzle.
+PROTECT your hands. Make sure the spindle is stopped before you take measurements.
+PROTECT your hands. Make sure the spindle is stopped before you move a safeguard. Never reach round a safeguard.
+PROTECT your hands. Make sure the machine is switched off and electrically isolated before making any mechanical adjustment.
+PROTECT your hands. Beware sharp edges of cutting tools when changing and handling tools.
+PROTECT your eyes and the machine. Never use a compressed air hose to remove swarf or to clean out air vents.
+KEEP the work area well lighted. Ask for additional lighting if needed.
+DON'T slip. Keep your work area clean and dry. Remove swarf, oil and obstacles.
+NEVER lean on the machine. Stand away when machine is running. DON'T get trapped. Avoid pinch points caused between other machines and the machine you are working.
+PREVENT objects from flying loose. Securely clamp and
+
+Chunk 12:
+T get trapped. Avoid pinch points caused between other machines and the machine you are working.
+PREVENT objects from flying loose. Securely clamp and locate the work piece.
+PREVENT cutter breakage. Use correct cutter speed and axis feed rate for the job. Make manual over ride adjustments of axis feed rate or spindle speed if you notice unusual noise or vibration. Ask your supervisor for help if you need it.
+PREVENT cutter breakage. Rotate the spindle in a clockwise direction for right handed tools, counter clockwise for left handed tools. Use the correct tool for the job.
+PREVENT work piece and cutter damage. Never start the machine when the cutter is in contact with the work piece.
+Dull and damaged tools break easily. Inspect tools and tool holders.
+Keep tools sharp. Keep overhang short.
+
+KEEP all lubrication reservoirs maintained at the correct level. Always keep to the maintenance schedule.
+Certain materials such as magnesium are highly flammable in dust and chip form. See your
+
+Chunk 13:
+t the correct level. Always keep to the maintenance schedule.
+Certain materials such as magnesium are highly flammable in dust and chip form. See your supervisor before working these materials. PREVENT fire. Keep flammable liquids and materials away from the work area and from hot swarf.
+PREVENT the machine from moving unexpectedly. When leaving the machine unattended, not producing, leave switched in the MANUAL mode.
+DON'T use the machine in a volatile atmosphere. Electrical devices fitted to the machine are for normal factory use and are not explosion proof.
+ALWAYS keep the machine clean and do not let swarf collect.
+ALWAYS keep the area around the machine clean and tidy. Opening the guards creates the potential for residual coolant and swarf to fall to the swarf tray and possibly to the floor. Good housekeeping minimizes the potential for trips, slip or fall of all personnel.
+This machine tool is a machining centre, and is intended for the use in machining materials with the work
+
+Chunk 14:
+al for trips, slip or fall of all personnel.
+This machine tool is a machining centre, and is intended for the use in machining materials with the work piece fixed to the table, and the cutting tool rotating in the spindle. The machine should not be used for any other purpose.
+INFORM all other personnel who approach the machine about the hazards described in this safety list.
+When making adjustments with spanners, always ensure that the required leverage is safely
+applied. Always avoid slippage. Always apply the leverage by pulling, never by pushing. Always use the correct size spanner. Ensure the spanner is not damaged.
+Do not use organic chemical solvents to clean the machine guards or compressed air services equipment.
+The windows are manufactured from bulletproof polycarbonate sheet. This material does deteriorate with age, and should be exchanged within the time period described later in this manual.
+Any workholding device used in conjunction with this machining centre must fit
+
+Chunk 15:
+uld be exchanged within the time period described later in this manual.
+Any workholding device used in conjunction with this machining centre must fit within the working envelope available. Under no
+circumstances must any such workholding device be used when it would require the need to override/defeat the safety interlocks fitted as standard to this machine.
+
+# 1.4 Safety Devices 
+
+### 1.4.1 Emergency Stop
+
+Make yourself aware of the location of the emergency stop push buttons, which should be well known so that they can be operated at any time without the need to look for them. Test the push buttons periodically for their correct operation.
+The emergency stop push buttons are located on the operator panel, chip conveyor \& remote hand wheel (if fitted).
+
+A dual channel monitoring safety relay is fitted in the machine through which the Emergency Stop Buttons are wired
+In addition to this are hard wired over travel switches on both ends of all 3 axes to check whether the axis has
+
+Chunk 16:
+the Emergency Stop Buttons are wired
+In addition to this are hard wired over travel switches on both ends of all 3 axes to check whether the axis has traveled beyond the allowed boundary. If any one of Emergency Stop buttons is pressed, the machine will stop immediately and go into an Emergency Stop condition.
+
+## CAUTION!
+
+Once the emergency condition has been safely resolved and the emergency stop buttons are released, the "Power On" button on the operator panel must be pressed to reset the safety relay into its normal condition. The "CE" button should then be pressed to clear any error messages within the control system.
+
+## Servo \& Spindle Power Disconnect
+
+Once the Emergency Stop button is pressed or any of the over travel limit switches have been operated, the machine will stop and the power supply to the drives is removed.
+
+### 1.4.2 Guard
+
+Machine equipped front door, ATC door, side door and full guard as safety device to protect operator. Doors are not allowed open in any
+
+Chunk 17:
+# 1.4.2 Guard
+
+Machine equipped front door, ATC door, side door and full guard as safety device to protect operator. Doors are not allowed open in any time when machining.
+# 1.4.3 Window 
+
+Machine equipped with 12 mm thickness ( $6 \mathrm{~m} / \mathrm{m}$ PC + air gap + $6 \mathrm{~m} / \mathrm{m}$ PC) safety glass on front and side guard. The window impact resistance capacity is at $8.39 \mathrm{~kg} . \mathrm{m}$. Any crack on the window is not allowable.
+
+### 1.4.4 Door Interlock
+
+The machine has 2 interlocked doors, the main access door at the front of the machine and the tool changer carousel door at the rear. The main door is shot bolted shut and can only be opened once the spindle is stationary and there is no program running. The tool changer carousel door can only be opened after pressing the soft key on the control panel. Once this has been done the operator must then turn the selector switch to " 1 " at the carousel load position which will then allow the door to open. At
+
+Chunk 18:
+e this has been done the operator must then turn the selector switch to " 1 " at the carousel load position which will then allow the door to open. At this time the carousel will not rotate.
+
+Power On Safety Circuit (Allows the operator to execute certain tasks whilst the front door is open)
+
+Limited machine functionality is available to the operator whilst the main door is open. This is achieved by turning the key switch to position " 1 ". This then allows the handwheel and jog keys to move the machine axes at feed rates of $2 \mathrm{~m} / \mathrm{min}$ and less. Spindle operation is prohibited whilst the main door is open as the spindle contactor is hard wired through the door interlock switch. Selection of automatic program running is prohibited until the doors are shut.
+
+### 1.4.5 Cabinet door switch
+
+The power of machine will be shut off automatically in 5 seconds if the cabinet door was opened, which was detected by the cabinet door switch.
+This switch could be overrided by
+
+Chunk 19:
+e shut off automatically in 5 seconds if the cabinet door was opened, which was detected by the cabinet door switch.
+This switch could be overrided by turning the key into position " 0 ".
+![img-0.jpeg](img-0.jpeg)
+# 1.5 Warning Labels 
+
+Most of the warning labels are self-explained as following:
+![img-1.jpeg](img-1.jpeg)
+
+### 1.6 Residual Risks
+
+The machine tool has been designed and manufactured to the highest standards, but still, your attention is drawn to the following RESIDUAL RISKS existing within the machine.
+
+- Always check that the cutting tool product you are using is approved to run at the selected speed.
+- If non suitable cutting conditions are selected, coolant can splash, and swarf can escape over the sides of the guard.
+- Failure of the Z-axis servo motor brake could allow the head to fall when the power is OFF
+- Do not operate the machine with the side door access panels removed.
+- Isolate the machine before cleaning the machine through the side door access panels
+# 2.
+
+Chunk 20:
+erate the machine with the side door access panels removed.
+- Isolate the machine before cleaning the machine through the side door access panels
+# 2. Introduction 
+
+### 2.1 Consumption Material
+
+2.1.1 Lubrication oil for linear rail and ballscrew
+
+Lubrication oil for linear rail and ballscrew are as follow:
+
+| No. | Lube item | Qt'y | Recommended oil |
+| :-- | :-- | :-- | :-- |
+| 1 | Linear rail | 6 cc | NBU-15 GREASE (KLUBER) |
+| 2 | Ballscrew | 4 liter | FEBIS K68 (ESSO) <br> VACTRA NO. 2 (MOBIL) <br> TONNA OIL T68 (SHELL) |
+
+2.1.2 Lubrication oil for pneumatic system
+
+Oil for pneumatic system is recommended to use same specification of ESSO TERESSO 32 or SHELL TELLUS OIL 32. Total quantity oil for machine in every half year need 120 cc .
+
+### 2.1.3 Cutting fluid
+
+Cutting fluid and mixing ratio with water are recommended by following table. Coolant tank capacity is 600 liter.
+
+| Marker: Castrol |  |  |  |
+| :-- | :-- | :-- | :-- |
+| No. | Type | Application | Maxing ratio to water
+
+Chunk 21:
+table. Coolant tank capacity is 600 liter.
+
+| Marker: Castrol |  |  |  |
+| :-- | :-- | :-- | :-- |
+| No. | Type | Application | Maxing ratio to water |
+| 1 | SYNTIOL-9913 | Aluminum cutting <br> only | $1: 15$ |
+| 2 | ALUSBL-B | Aluminum cutting <br> only | $1: 15$ |
+| 3 | HYSOL-X | Various material <br> cutting | $1: 20$ |
+
+2.1.4 Filter for cutting fluid
+
+Machine equipped a pressure sensor to detect the filtering condition
+of fluid filter. Filter element seized by cutting chip cause coolant pressure low alarm show up.
+
+# 2.1.5 Coolant of cooler 
+
+Oil/ water specification and quantity for spindle chilling are recommended as following description
+
+| item | Lubrication item | Recommended oil | Quantity |
+| :-- | :-- | :-- | :-- |
+| 1 | Spindle oil chiller | Mobil Velocite Oil no. 3 ISO <br> VG2 | 32 liter |
+| 2 | Spindle Eco-cooler | pH7-9 distilled water with <br> G48 anitrust | 100 liter |
+# 2.2 Operation Panel 
+
+Visual display unit
+![img-2.jpeg](img-2.jpeg)
+
+1. Header
+2. Soft key
+3.
+
+Chunk 22:
+9 distilled water with <br> G48 anitrust | 100 liter |
+# 2.2 Operation Panel 
+
+Visual display unit
+![img-2.jpeg](img-2.jpeg)
+
+1. Header
+2. Soft key
+3. Soft-key select key
+4. Switches the sofy-key row
+5. Set the screen layout
+6. Shift key for switchover between machining and programming modes
+7. Soft-key selection keys for machine tool builders
+8. Switches soft-key rows for machine tool builder
+
+## TE530 HEIDENHAIN PANEL
+
+![img-3.jpeg](img-3.jpeg)
+No. 1 block: Alphabet key board for word or file name input
+No. 2 block:
+
+- Program management
+- Calculator function
+- Mod function
+- Help function
+
+No. 3 block: Programming button
+No. 4 block: Machine operating selection button
+No. 5 block: Dialogue function button
+No. 6 block: Cursor, page up and down button
+No. 7 block: Numeral and axes button
+No. 8 block: Touch pad
+
+# Operation panel 
+
+![img-4.jpeg](img-4.jpeg)
+
+1. Power ON and Emergency stop button.
+2. Jog operation function key
+![img-5.jpeg](img-5.jpeg)
+3. Operation of peripheral
+
+Chunk 23:
+![img-4.jpeg](img-4.jpeg)
+
+1. Power ON and Emergency stop button.
+2. Jog operation function key
+![img-5.jpeg](img-5.jpeg)
+3. Operation of peripheral devices
+4. Cycle start and stop button
+# 2.3 Buttons/Knobs on chip conveyor 
+
+![img-6.jpeg](img-6.jpeg)
+
+### 2.4 Buttons/Knobs for Tool Magazine
+
+![img-7.jpeg](img-7.jpeg)
+
+Emergency Stop Button
+
+MAG C.W and CCW rotation Button
+
+ATC Door Safety Switch Release Button
+
+MAG.cw and ccw are momentary type push button for magazine operation in manually. Push the button once for one pocket rotating. Magazine will not stop till push button at released.
+
+### 2.5 Spindle Tooling
+
+Tooling with a balance level of G2.5 or better should always be used. Failure to do so will reduce spindle life and surface finish and may invalidate the machine warranty.
+
+For safe operation, make sure the tool holder and pull stud combination meet the standard below:
+![img-8.jpeg](img-8.jpeg)
+![img-9.jpeg](img-9.jpeg)
+# 2.6 Tool Magazine and ATC
+
+Chunk 24:
+ure the tool holder and pull stud combination meet the standard below:
+![img-8.jpeg](img-8.jpeg)
+![img-9.jpeg](img-9.jpeg)
+# 2.6 Tool Magazine and ATC 
+
+![img-10.jpeg](img-10.jpeg)
+
+### 2.7 Cooling System
+
+Two types of cooling system are available, depending on the type of spindle. The coolant should be filled in the tank prior to run the spindle. The information of coolant to be used could be found on the information label of oil usage.
+
+### 2.8 Chip Removal
+
+Chips were washed away from the interior of machine and flow into the chute where the chip screw augers located. Then chips were brought to the chip conveyor then collected at the exit of conveyor.
+# 3. Installation 
+
+### 3.1 Foundation Preparation
+
+The machine should be sited on a flat area (maximum fall 3 mm in 3 $\mathrm{m})$ free from cracks and expansion joints.
+
+The composition of the floor and sub-structure should be of suitable construction to bear the weight of the machine. Any friable areas should be made good using
+
+Chunk 25:
+ition of the floor and sub-structure should be of suitable construction to bear the weight of the machine. Any friable areas should be made good using recognized building construction techniques. If doubt exists we recommend you consult your building architect.
+
+### 3.2 Power Preparation
+
+### 3.2.1 Line Configuration
+
+The machine is designed to operate from a 3-phase AC incoming power source with an earth star point, as shown in the right. This incoming line short circuit current must be at least 2 kA .
+![img-11.jpeg](img-11.jpeg)
+
+In other cases, such as those examples shown in figures below, an isolating transformer of 40 kVA or 45 kVA capacity with an earth grounded WYE secondary is required between the incoming lines and the machine. The incoming line short circuit current must again be least 2 kA .
+
+Other Incoming Line Configurations
+![img-12.jpeg](img-12.jpeg)
+# 3.3 Unpacking 
+
+The machine was fixed on a skid during which could be pulled to the opening of container and then
+
+Chunk 26:
+ations
+![img-12.jpeg](img-12.jpeg)
+# 3.3 Unpacking 
+
+The machine was fixed on a skid during which could be pulled to the opening of container and then moved by a fork lifter.
+Select a chain according to the weight of the machine. Tie the chain to the skid and make sure the connection is secured. Slowly pull the machine and monitor the gap between the machine and the wall of the container.
+
+### 3.4 Machine Lifting
+
+If the machine is to be lifted by crane use the universal lifting frame supplied for your machine.
+Any lifting cables and slings must be rated to take the machine's weight.
+
+If the machine is to be lifted by Fork Truck, the minimum capacity should be $120 \%$ of the machine weight and with a minimum tine length of $2,000 \mathrm{~mm}$.
+
+### 3.5 Leveling of Machine
+
+a) Make sure the location of the machine is exactly where you need it to be. Ensure allowance for access for operation, cleaning and maintenance is provided. See the installation dimensional drawing for minimum
+
+Chunk 27:
+u need it to be. Ensure allowance for access for operation, cleaning and maintenance is provided. See the installation dimensional drawing for minimum clearances.
+b) Locate the floor pads which are packed with the associate kit and position them on the floor under each jack bolt. When satisfied lower the machine gently onto the pre-located pads. Ensure jack bolts are screwed down to provide a 10 to 15 mm gap from the underside of the base casting to the floor.
+c) If you use skates then employ the jack bolts with suitable support packing to raise the machine enough to remove the skates and finally set onto the floor pads.
+
+### 3.6 Before Power ON
+
+### 3.6.1 Grounding
+
+a) The machine must be grounded in order to protect personnel
+and the machine from electrical hazards. Grounding must be in accordance with the standards for electrical equipment.
+b) Ideally, the grounding point should be as close as possible to the machine.
+c) A qualified electrician must carry out the grounding work,
+
+Chunk 28:
+quipment.
+b) Ideally, the grounding point should be as close as possible to the machine.
+c) A qualified electrician must carry out the grounding work, otherwise serious injury, death, or accidents involving machine damage could result.
+d) The machine must be grounded in one of the following ways:
+
+1) Independent grounding
+![img-13.jpeg](img-13.jpeg)
+2) Common grounding
+![img-14.jpeg](img-14.jpeg)
+
+Regardless of the type of grounding system used, the earth loop impedance of the supply, which connects the machine to ground/earth, must not exceed 1 ohm.
+e) Never ground the machine in the manner shown in the illustration below.
+![img-15.jpeg](img-15.jpeg)
+
+No more than one grounding conductor wire can be connected to a single terminal. If the grounding conductors are connected in the manner shown in the illustration above, a faulty connection at one of the terminals could cause grounding current to be fed back to the machine, resulting in serious accidents.
+
+Once the electrical and air
+
+Chunk 29:
+tion at one of the terminals could cause grounding current to be fed back to the machine, resulting in serious accidents.
+
+Once the electrical and air supplies are provided make the connection to the machine. The delivery dimensional drawing gives details of input locations.
+
+# ON NO ACCOUNT MUST YOU SWITCH ON THE MACHINE. 
+
+## WE PREFER YOU TO REMOVE YOUR ISOLATOR FUSES OR TRIP CIRCUIT BREAKERS.
+
+### 3.6.2 Power connection
+
+A qualified electrician should only carry out connection of the power lead to the machine.
+
+Cables, cords or electric wires of which insulation is damaged can produce current leaks and electric shocks. Check their condition before connecting.
+
+Ensure the power cable to the machine main isolator has sufficient current carrying capacity to handle the electric power used.
+
+Cables which must be laid on the floor, must be protected against chips, oil and coolants penetration, which might cause damage.
+In the event of power failure, turn off the main circuit breaker
+
+Chunk 30:
+t be protected against chips, oil and coolants penetration, which might cause damage.
+In the event of power failure, turn off the main circuit breaker immediately.
+
+Fuses and circuit breakers should be replaced only with suitably rated alternatives. Safety devices should be replaced only with the machine manufacturers recommended parts.
+
+Protect the CNC unit, operating panel, and electric cabinet etc from shocks which could cause a failure of malfunction.
+
+Connecting the power cable to main power terminal block 21MT1. Ensure the sign rotation of $R, S, T$ phases.
+![img-16.jpeg](img-16.jpeg)
+
+Connecting the ground cable to the Earth bar.
+![img-17.jpeg](img-17.jpeg)
+
+# 3.6.3 Misc. 
+
+Check the condition of the warning labels. If they are missing or become illegible, order replacements from your distributor according to the part number on the label plate. Do not remove warning labels.
+After unpacking the machine clean all rust preventatives from the machine with a non-volatile cleaning
+
+Chunk 31:
+the label plate. Do not remove warning labels.
+After unpacking the machine clean all rust preventatives from the machine with a non-volatile cleaning fluid. Lightly lubricate each sliding part before trying to operate the machine. Manually operate the lubricating oil pump until oil oozes out from the slide way wipers.
+
+Oil volume should be filled to the indicated level. Check and top up if necessary.
+
+Use recommended oil brands and appropriate levels for all lubricating systems. See the instruction plate at the rear of the machine.
+
+The coolant system comprises of a separate tank which houses the coolant pumps and is located beneath the front and left sides of the machine.
+
+# 3.7 First Time Power ON 
+
+### 3.7.1 Rotation Direction of Motors
+
+The rotation of 3-phase motors of pumps, chips removal and fans might be reversed due to the different phase sequence of city power U, V and W. Please confirm the rotation of all the coolant pumps and cooling fans.
+
+### 3.7.2 Spindle Run-in
+
+The
+
+Chunk 32:
+fferent phase sequence of city power U, V and W. Please confirm the rotation of all the coolant pumps and cooling fans.
+
+### 3.7.2 Spindle Run-in
+
+The grease inside the bearings of spindle might be concentrated by gravity due to temperature variation during the transportation and storage. It is a MUST to run the spindle following the procedures described in Appendix.
+# 4. Operation 
+
+### 4.1 Power ON/OFF
+
+Never turn off power during automatic operation or with the spindle or axes running unless an emergency occurs. It is better to interrupt the program by pressing the "Cycle Stop" push button.
+Ensure that all Emergency Stop Buttons are unlocked.
+
+Turn the machine on at the isolator. The machine will begin to power up, and the message 'Power Interrupted' will be displayed..
+
+Press the key to clear this message and conclude boot-up sequence.
+
+Press the power button $\square$ the machine will take a few moments to boot up.
+
+Power up the machine by pressing the button $\square$ for a
+
+Chunk 33:
+quence.
+
+Press the power button $\square$ the machine will take a few moments to boot up.
+
+Power up the machine by pressing the button $\square$ for a couple of seconds.
+
+### 4.2 Reference the Machine
+
+Press the Reference Return Button on screen soft key.
+Press the Cycle Start Button $\square$ to begin referencing procedure
+
+The machine will automatically reference out in the following order:
+
+Z Axis
+X Axis
+Y Axis
+IV Axis (Where fitted)
+V Axis (Where fitted)
+Note: During the axis reference procedure, the toolchange magazine will also reference. The message 'TC magazine reference' will flash until this has been completed. Also, if the machine is fitted with linear scales, the axes do not move when referencing.
+
+Note: If any of the Machine axes are already over the referencing point, it may be necessary to manually move the axis away in jog mode before beginning the reference procedure.
+
+# 4.3 Worklight ON/OFF 
+
+After machine power on, work light could be turned on by push this button.
+
+Chunk 34:
+og mode before beginning the reference procedure.
+
+# 4.3 Worklight ON/OFF 
+
+After machine power on, work light could be turned on by push this button. If work light can't activate, check 220 V fuse in the cabinet is jumped out or not.
+
+### 4.4 Machine Warm-up
+
+** If the machine is used to produce components immediately after being started, following a long idle period, sliding parts may be worn due to lack of oil and thermal expansion of the machine can jeopardize machining accuracy. To prevent this condition, always warm the machine up. **
+
+We recommend that the machine is 'Warmed up' prior to first operation by running all axes for 10 to 20 minutes at about half or one third the maximum speed in the automatic operation mode before actual cutting.
+
+### 4.5 Spindle Operation
+
+## Spindle Control Buttons:
+
+## $\square$
+
+## Spindle on turning CW only .
+
+- Uses button to acknowledge as door being opened, press spindle CW again, spindle will be rotated immediately based upon previously " S
+
+Chunk 35:
+ng CW only .
+
+- Uses button to acknowledge as door being opened, press spindle CW again, spindle will be rotated immediately based upon previously " S " code.
+# 2 : Spindle stop function. 
+
+## Stops spindle running.
+
+Note: The above buttons only allow spindle operation in MPG or Jog mode. To activate the spindle, an $S$ value must be programmed in Auto or MDI mode first.
+
+## Spindle Speed Override Dial:
+
+![img-18.jpeg](img-18.jpeg)
+
+In all modes, the override dial allows the programmed spindle rpm to be manually adjusted from $50-150 \%$. When adjusting the spindle rpm during program run, there may be a slight feed hold to allow the machine to achieve the new spindle speed before continuing.
+
+### 4.6 Spindle Warm-up
+
+If the appendix 7.3 procedures are not followed, spindle life will be reduced significantly. Follow the speed and running time duration in the table for each type of spindle. Please note that the duration is either in minutes (m) or in seconds (s).
+
+### 4.7 Interrupting
+
+Chunk 36:
+g time duration in the table for each type of spindle. Please note that the duration is either in minutes (m) or in seconds (s).
+
+### 4.7 Interrupting Operation
+
+When leaving the machine temporarily after completing a job, turn off the power on the operator panel with the Emergency Stop button and turn off the main isolator.
+
+### 4.8 Jobs Finished
+
+Always clean the machine and supporting equipment down after use. Remove and dispose of chips and clean the covers and windows etc.
+Return each machine component to its initial condition.
+
+Check wipers for damage and replace if necessary.
+
+Check coolants, hydraulic oils and lubricants for level \& contamination. Change them if you suspect they are contaminated.
+
+Clean the filter on the top of the coolant tank.
+
+Turn off the power first on the control panel with the emergency stop button and then at the main isolator before leaving the machine at end of the shift.
+
+# 4.9 Jog Axis 
+
+The Machine axes can be moved manually with the axis jog
+
+Chunk 37:
+d then at the main isolator before leaving the machine at end of the shift.
+
+# 4.9 Jog Axis 
+
+The Machine axes can be moved manually with the axis jog keys in either Manual Operation or Electronic Handwheel modes.
+
+Press or
+In manual mode, the following buttons can be used to manually move an axis:
+![img-19.jpeg](img-19.jpeg)
+
+## To move an axis:
+
+Select the desired axis by pressing the corresponding selection key. Press the direction key corresponding to the required movement direction.
+The feedrate can be controlled using the feed override dial. For rapid feed press the rapid feed selection key.
+
+# Feedrate override dial: 
+
+This dial allows adjustment of the programmed feedrate from 0 $150 \%$ in Auto and manual modes.
+
+Note: To move an axis in jog mode with the guard door open, the door safety selector switch must be set to ' 1 '. Set the
+![img-20.jpeg](img-20.jpeg)
+switch back to ' 0 ' when the operation is completed. With the guard door open, the jog feed rate is reduced.
+
+##
+
+Chunk 38:
+Set the
+![img-20.jpeg](img-20.jpeg)
+switch back to ' 0 ' when the operation is completed. With the guard door open, the jog feed rate is reduced.
+
+## Manual Axis Jog via soft key.
+
+The machine axes can also be moved using the machine soft keys.
+
+To do this enter electronic handwheel mode using the key.
+Press
+to enter the machine functions soft key menu.
+
+Select the axis to be moved using the orange axis selection keys.
+
+The selected axis can now be jogged using and
+![img-21.jpeg](img-21.jpeg)
+# 4.10 Jog Axis by MPG 
+
+To manually move axis using the Handwheel, first select MPG mode by pressing
+![img-22.jpeg](img-22.jpeg)
+
+## Movement Factor:
+
+$x 1: 0.001 \mathrm{~mm}$ per division
+x10: $\quad 0.010 \mathrm{~mm}$ per division
+x100: 0.1 mm per division
+
+## To move an axis:
+
+Select the desired axis using the axis selection switch.
+Select the required movement factor using the switch
+Rotate the handwheel in the required direction.
+
+Note: To move an axis in MPG mode with the guard door
+
+Chunk 39:
+t the required movement factor using the switch
+Rotate the handwheel in the required direction.
+
+Note: To move an axis in MPG mode with the guard door open, the door safety selector switch must be set to ' 1 '. Set the switch back to ' 0 ' when the operation is completed. With the guard door open, the $x 100$ movement factor is not available
+# Setting the Interpolation factor 
+
+Key in number of desired interpolation factor (see table) and press
+
+| Interpolation Factor | Traverse per <br> Revolution in MM |
+| :--: | :--: |
+| 1 | 10,000 |
+| 2 | 5,000 |
+| 3 | 2,500 |
+| 4 | 1,250 |
+| 5 | 0,625 |
+| 6 | 0,312 |
+| 7 | 0,156 |
+| 8 | 0,078 |
+| 9 | 0,039 |
+| 10 | 0,019 |
+# 4.11 Tool Data Setting 
+
+Tool data can be entered either directly in the part program with Tool DEF or separately in a tool table. The TNC will consider all the data entered for the tool when executing part program. Each tool is identified by a number between 0 to 32767 . The tool number 0 is automatically defined as the zero
+
+Chunk 40:
+the tool when executing part program. Each tool is identified by a number between 0 to 32767 . The tool number 0 is automatically defined as the zero tool with the length $L=0$ and the radius $R=0$. In tool tables, tool T0 should also be defined with $L=0$ and $R=0$.
+
+To select tool definition, press TOOL DEF softy key
+Tool number: Each tool is uniquely identified by its tool number
+Tool length: Compensation value for the tool length.
+Tool radius: Compensation value for the tool radius.
+Standard tool data in the tool table are as appendix.
+
+The tool table that is active during execution of the part program is designated as TOOL.T. It can be edited in one of the machine operating modes. Other tool tables that are used for archiving or test runs are given different file name with the extension .T.
+To open the tool table TOOL.T. Select any machine operating mode.
+To select the tool table, press the TOOL TABLE soft key.
+
+Set the EDIT soft key to ON.
+
+To open any other TOOL TABLE, select
+
+Chunk 41:
+y machine operating mode.
+To select the tool table, press the TOOL TABLE soft key.
+
+Set the EDIT soft key to ON.
+
+To open any other TOOL TABLE, select the programming and Editing mode of operation
+
+Call the file manager
+To select the file type, press the SELECT FILE TYPE softy key.
+To show TYPE. T files, press the SHOW. T type.
+Select a file or enter a new file name. Conclude the entry with ENT key or SELECT softy key.
+# 4.12 Work Coordinate Setting 
+
+![img-23.jpeg](img-23.jpeg)
+
+TNC offer Datum preset table for machine equipped with rotary axes, spindle head changing system or machining identical workpieces that are differently aligned. The preset table can contain any numbers of line (datum).
+
+The preset table has the name PRESET.PR, and is saved in the directory TNC:\. PRESET.PR is editable only in the Manual and MPG mode. In the Programming and Editing mode you can only read the table, not edit it.
+
+In order to set datum into preset table, process is as follows:
+$\square$ Select
+
+Chunk 42:
+ogramming and Editing mode you can only read the table, not edit it.
+
+In order to set datum into preset table, process is as follows:
+$\square$ Select the manual operation mode
+X
+Y
+2 Move the tools slow until it touch the workpieces surface, or position measuring dial correspondingly.
+
+## OVERL
+
+PRESET
+Select functions for entering the presets: The TNC display the available possibilities for entry in the soft-key row. See the table below for a description of the entry possibilities.
+
+Select the line in the preset table which you want to change ( the line number is the preset number)
+
+If needed, select the column (axis) in the preset table which you want to change.
+
+Use the soft keys to select one of the available entry possibilities.
+# 4.13 Door Interlock Overriding 
+
+To unlock the guard door press the button. $\square$
+
+The guard door will automatically lock when it is closed.
+
+It is not possible to unlock the guard door when the machine is in motion.
+![img-24.jpeg](img-24.jpeg)
+
+In
+
+Chunk 43:
+will automatically lock when it is closed.
+
+It is not possible to unlock the guard door when the machine is in motion.
+![img-24.jpeg](img-24.jpeg)
+
+In addition, the machine is fitted with a guard door safety switch to allow the machine axes to be manually moved when setting etc.
+
+With the switch set to ' 1 ' it is possible to move the machine in Jog and MPG modes with the door open. Once the setting operation has been completed, it is necessary to set the switch back to ' 0 ' to enable full sequence auto operation.
+# 4.14 Tool Loading/Unloading 
+
+Load the correct tool number into the Spindle by
+Manual or MPG mode.
+
+Press to unlock the guard door. Open guard door of machine.
+
+Press manual Tool Unclamp/Clamp button for TC application
+
+While holding the tool, press and hold the clamp/unclamp button on the machine head to release the tool (See illustration). Replace tool and release the button to clamp.
+
+Close guard door of machine.
+![img-25.jpeg](img-25.jpeg)
+
+### 4.15 ATC
+
+Chunk 44:
+ase the tool (See illustration). Replace tool and release the button to clamp.
+
+Close guard door of machine.
+![img-25.jpeg](img-25.jpeg)
+
+### 4.15 ATC Operation
+
+Manual Tool Unclamp/Clamp for TC application: This function apply in tool change when front door open. " Tool unclamping please " or " Tool clamping please" will show as doing tool change in manual
+
+MAG Loading: ATC door can be opened and Tools can be loading into MAG by manual by push this soft-key.
+
+MAG CW rotating: After MAG LOADING soft-key by push and ATC door opened, Magazine rotating in clockwise direction can be activated
+
+MAG CCW rotating: Magazine rotating in counter-clockwise direction can be activated by push this soft-key.
+# 4.16 Coolant Operation 
+
+Note: Please check the coolant level before operating the coolant system
+
+Nozzle Coolant: The nozzle coolant can be activated/ deactivated by pressing this key.
+
+Coolant through Spindle: The coolant through spindle can be activated/deactivated by pressing this key.
+
+|
+
+Chunk 45:
+tivated/ deactivated by pressing this key.
+
+Coolant through Spindle: The coolant through spindle can be activated/deactivated by pressing this key.
+
+| FN |
+| :-- |
+| 2 |
+
+Coolant Wash down Gun: The coolant wash gun can be activated by pressing the button.
+
+### 4.17 Chip Removal Operation
+
+![img-26.jpeg](img-26.jpeg)
+
+Chip auger rotation: In manual mode, the chip auger can be activated by pressing the button. Pressing the button again will de-activate the chip auger. Be sure to de-activated chip auger when front door is opened.
+
+Chip conveyor operation: In manual mode, chip conveyor can be activated and stop by push this soft-key. Konb switch should be turned into Auto Mode.
+
+### 4.18 Auto Pallet Change System
+
+To be appended in the future.
+# 5. Maintenance 
+
+## DANGER!
+
+Before carrying out any maintenance work, ensure that the machinery is switched off and disconnected from the main power supply. Also ensure that the necessary warning signs and /or locks are appointed to stop any
+
+Chunk 46:
+nery is switched off and disconnected from the main power supply. Also ensure that the necessary warning signs and /or locks are appointed to stop any unauthorized persons from switching the power on to the machine until the work is complete and the machinery is safe to operate.
+
+The above warning signs or indications should be secured by a semi-permanent means with the printing clearly visible.
+
+Only qualified and competent maintenance engineers should carry out machinery maintenance work. Working on live electrical equipment must be carried out by only suitably qualified electricians.
+
+## WARNING!
+
+Over travel limit switches, proximity switches and interlock mechanisms including all functional parts should not be removed or modified.
+
+When working in high places, use steps or a ladder which are maintained daily for safety.
+
+Use only fuses, cable's etc. from reputable recognized manufacturers.
+
+## CAUTION!
+
+The maintenance person should check that the machine operates safety after
+
+Chunk 47:
+fuses, cable's etc. from reputable recognized manufacturers.
+
+## CAUTION!
+
+The maintenance person should check that the machine operates safety after the work is completed. Maintenance and inspection data should be recorded and kept for reference.
+# 5.1 Routine Inspection 
+
+### 5.1.1 Daily
+
+1. Check pressure gauges for proper reading. Air pressure 5.5 bar (80psi). Hydraulic pressure 68bar (986psi)
+2. Check that there is sufficient oil in the air lubricator.
+3. Check motors and other parts for abnormal noises.
+4. Check the lubrication of sliding parts for evidence of proper lubrication.
+5. Check safety covers and safety devices for proper operation.
+6. Check coolant level and fill as necessary.
+7. Clean dirt and chips from the axes and empty the swarf trays.
+5.1.2 Weekly (In addition to daily routine)
+8. Clean chips and dirt from the entire machine and wipe down.
+9. Check the air filter at the rear of the electrical cabinet. Replace the filter element if it is contaminated.
+10. Check
+
+Chunk 48:
+tire machine and wipe down.
+9. Check the air filter at the rear of the electrical cabinet. Replace the filter element if it is contaminated.
+10. Check all polycarbonate vision panels for signs of damage crazing, cracking etc. or reduced visibility and replace if necessary. Contact your distributor for details.
+11. Check the spindle cooler/chiller is running properly and the coolant temperature is near the temperature setting.
+12. Check the spindle front draining hole from labyrinth is not jammed by dirt.
+13. Check the air purging at the spindle nose. Run the spindle for 10 seconds and stop. Listen or feel the air flowing from the gap between the spindle shaft and housing.
+5.1.3 Yearly (In addition to weekly routine)
+14. Remove the filter from the air filter bottle and clean/replace.
+15. Check spindle drive belt condition and tension.
+16. Check lost motion.
+17. Check the condition of the linear rail wipers.
+18. Check the integrity of the electrical connections and inspect the condition
+
+Chunk 49:
+Check lost motion.
+17. Check the condition of the linear rail wipers.
+18. Check the integrity of the electrical connections and inspect the condition of the insulation.
+19. Check condition of coolant filters and replace if necessary.
+
+### 5.2 Lubrication
+
+### 5.2.1 Automatic Lubrication System
+
+Lubricator supply 1cc oil to lubricate ballscrew once time every 15
+minutes. Oil discharge volume can be adjusted by a handle and illustration on the oil tank.
+
+# 5.2.2 FRL unit 
+
+FRL unit offer air cleaning and air lubricating function. The lubricating oil discharge rate could be adjusted by a knob on FRL unit.
+
+### 5.3 Cleaning
+
+### 5.3.1 Machine Interior:
+
+Chip might spatter and accumulated inside of MAGAZINE guard or somewhere that washdown coolant can't reach after mechining. Oil/coolant condensation might be accumulated inside of HeadStock and effect machine operating in good condition. It needs to be check or clean out.
+
+### 5.3.2 Coolant Filtering:
+
+Beside filter element of TCS system,
+
+Chunk 50:
+and effect machine operating in good condition. It needs to be check or clean out.
+
+### 5.3.2 Coolant Filtering:
+
+Beside filter element of TCS system, machine equipped metal filter on coolant tank to filtering chip. The chips are needed to be cleaned out.
+# 6. Trouble shooting 
+
+### 6.1 ATC system:
+
+1. Magazine is not imposition:
+
+Brake fail to work or sensor switch with far distance
+2. Magazine running time-out:
+
+Counting sensor is break down or too far distance
+3. Tool pot up/down is not imposition:
+
+Pot up/down cylinder fail to work or imposition sensor break down.
+4.ATC ARM is not imposition( $0^{\circ}, 60^{\circ}$ or $180^{\circ}$ )
+
+Arm imposition sensor in Cam Box is break down.
+5. ATC motor overloads or overheats:
+
+Motor break is not released or break down. Commutator is break down
+6. No confirm of tools clamp or unclamp
+
+Air pressure low, air booster oil leaky or clamp/unclamp sensor is break down.
+7. Tools falling down when arm rotating:
+
+Tool can not be clamped well due to
+
+Chunk 51:
+essure low, air booster oil leaky or clamp/unclamp sensor is break down.
+7. Tools falling down when arm rotating:
+
+Tool can not be clamped well due to arm grip or stop pin is seized or arm and spindle are not aligned.
+8. ATC service process is as Appendix 7.7
+
+### 6.2 Cooling, Coolant and lubrication system.
+
+1. Coolant level low.
+
+Coolant water level too low or level detective sensor is break down.
+2. Coolant filter alarm
+
+Filter element is seized or pressure detective sensor is break down
+3. Lubrication oil level too low
+
+Refill lubrication oil into tank
+4. Lubrication pressure too low
+
+Refill lubrication oil or replace whole lubricator unit.
+5. Coolant pump overload.
+
+Wrong phase supplying or improperly power connecting. Water is too low.
+6. Coolant pumps noise.
+
+Pump sealing is break down or chip materials invade into pump.
+7. Oil chiller alarm
+
+Check and release oil chiller alarm follow with manufacturer manual.
+
+# 6.3 Door switch system 
+
+1. Cabinet door is opened
+
+Close cabinet
+
+Chunk 52:
+iller alarm
+
+Check and release oil chiller alarm follow with manufacturer manual.
+
+# 6.3 Door switch system 
+
+1. Cabinet door is opened
+
+Close cabinet door or replace door prox. switch
+2. Front door is opened
+
+Close front door or replace interlock switch
+3. Side door is opened
+
+Close spindle headstock side door, readjust position of door prox. switch or replace it off.
+4. No confirmed of ATC door open/close
+
+Readjust ATC door interlock switch position or replace if off.
+# 7. Appendix 
+
+### 7.1 Power requirements
+
+| Model | kVA | 400 V |  | 220 V |  |
+| :--: | :--: | :--: | :--: | :--: | :--: |
+|  |  | Amps |  |  |  |
+|  |  | Fanuc | Heidenhain | Fanuc | Heidenhain |
+| MV154 QAN2000 | 30 |  | 50 |  | 90 |
+| MV154 SNE | 35 |  | 58 |  | 106 |
+| MV204 CV <br> QAN2000 | 30 |  | 50 |  | 90 |
+| MV204 CP/CPL <br> QAN260L | 35 |  | 58 |  | 106 |
+| MV204CP/CPL <br> SEN | 35 |  | 58 |  | 106 |
+
+Note: The above assumes a spindle oil chiller is fitted.
+
+### 7.2 Pneumatic requirements
+
+|  | Unit |
+
+Chunk 53:
+| MV204CP/CPL <br> SEN | 35 |  | 58 |  | 106 |
+
+Note: The above assumes a spindle oil chiller is fitted.
+
+### 7.2 Pneumatic requirements
+
+|  | Unit | Value |
+| :--: | :--: | :--: |
+| Pressure | Bar | $>5.5$ |
+| Flow rate (w/o scale) | Litre/min | $>500$ |
+| Flow rate (w scale) |  | $>600$ |
+| Dew point (at ATM. Pressure) | ${ }^{\circ} \mathrm{C}$ | -17 or lower |
+| Note: The air supply must be clean (40micron particulate size) and dry. <br> Do not connect direct to a compressor with a short pipe as water/oil may <br> condense out and cause a potential seizure of the spindle bearings through the <br> air purge circuit. <br> An air drier unit is recommended. |  |  |
+# 7.3 Spindle run-in procedures 
+
+| 20000 rpm |  | 15000 rpm |  | 12000 rpm |  | 10000 rpm |  | 9000 rpm |  |
+| :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| Speed <br> (rpm) | Time | Speed <br> (rpm) | Time | Speed <br> (rpm) | Time | Speed <br> (rpm) | Time | Speed <br> (rpm) | Time |
+| 1000 | 5
+
+Chunk 54:
+:--: |
+| Speed <br> (rpm) | Time | Speed <br> (rpm) | Time | Speed <br> (rpm) | Time | Speed <br> (rpm) | Time | Speed <br> (rpm) | Time |
+| 1000 | 5 m | 1000 | 5 m | 1000 | 5 m | 1000 | 5 m | 1000 | 5 m |
+| 5000 | 3 s | 5000 | 3 s | 5000 | 3 s | 5000 | 3 s | 5000 | 3 s |
+| 2000 | 5 m | 2000 | 5 m | 2000 | 5 m | 2000 | 5 m | 2000 | 5 m |
+| 10000 | 3 s | 10000 | 3 s | 10000 | 3 s | 10000 | 3 s | 9000 | 3 s |
+| 3000 | 5 m | 3000 | 5 m | 3000 | 5 m | 3000 | 5 m | 3000 | 5 m |
+| 15000 | 3 s | 15000 | 3 s | 12000 | 3 s | -- | -- | -- | -- |
+| 4000 | 5 m | 4000 | 5 m | 4000 | 5 m | 4000 | 5 m | 4000 | 5 m |
+| 20000 | 3 s | -- | -- | -- | -- | -- | -- | -- | -- |
+| 5000 | 5 m | 5000 | 5 m | 5000 | 5 m | 5000 | 5 m | 5000 | 5 m |
+| -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
+| 6000 | 5 m | 6000 | 5 m | 6000 | 5 m | 6000 | 5 m | 6000 | 5 m |
+| -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
+| 7000 | 5 m | 7000 | 5 m | 7000 | 5 m | 7000 | 5 m | 7000 | 5 m |
+| 8000 | 5 m | 8000 | 5 m |
+
+Chunk 55:
+m |
+| -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
+| 7000 | 5 m | 7000 | 5 m | 7000 | 5 m | 7000 | 5 m | 7000 | 5 m |
+| 8000 | 5 m | 8000 | 5 m | 8000 | 5 m | 8000 | 5 m | 8000 | 5 m |
+| 9000 | 5 m | 9000 | 5 m | 9000 | 5 m | 9000 | 5 m | 9000 | 5 m |
+| 10000 | 5 m | 10000 | 5 m | 10000 | 5 m | 10000 | 5 m |  |  |
+| 11000 | 15 m | 11000 | 15 m | 11000 | 15 m |  |  |  |  |
+| 12000 | 15 m | 12000 | 15 m | 12000 | 15 m |  |  |  |  |
+| 13000 | 15 m | 13000 | 15 m |  |  |  |  |  |  |
+| 14000 | 15 m | 14000 | 15 m |  |  |  |  |  |  |
+| 15000 | 15 m | 15000 | 15 m |  |  |  |  |  |  |
+| 16000 | 15 m |  |  |  |  |  |  |  |  |
+| 17000 | 15 m |  |  |  |  |  |  |  |  |
+| 18000 | 15 m |  |  |  |  |  |  |  |  |
+| 19000 | 15 m |  |  |  |  |  |  |  |  |
+| 20000 | 15 m |  |  |  |  |  |  |  |  |
+# 7.4 Functions of operation panel 
+
+![img-27.jpeg](img-27.jpeg)
+
+Programming path movements
+![img-28.jpeg](img-28.jpeg)
+![img-29.jpeg](img-29.jpeg)
+![img-30.jpeg](img-30.jpeg)
+
+# Move active axis in
+
+Chunk 56:
+g](img-27.jpeg)
+
+Programming path movements
+![img-28.jpeg](img-28.jpeg)
+![img-29.jpeg](img-29.jpeg)
+![img-30.jpeg](img-30.jpeg)
+
+# Move active axis in positive direction 
+
+![img-31.jpeg](img-31.jpeg)
+
+Remove and reset the PLC soft key row
+
+Jog mode spindle direction M3
+
+Jog mode spindle direction M4
+
+Spindle orientation (M19)
+
+Monitoring working area
+![img-32.jpeg](img-32.jpeg)
+Diagnosis Functions:
+![img-33.jpeg](img-33.jpeg)
+
+Display soft key row with the diagnosis functions
+![img-34.jpeg](img-34.jpeg)
+
+Display soft key row with PLC documentation
+![img-35.jpeg](img-35.jpeg)
+![img-36.jpeg](img-36.jpeg)
+
+| DIAG R | R |  |  |  |  |  |  |  |
+| :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+|  |  |  |  |  |  |  |  |  |
+| Motor | Temperature | [Degree] |  |  |  |  |  |  |
+|  | 0 | 254 | 254 | 254 | 254 |  |  |  |
+| Motor Utilization | [\%] |  |  |  |  |  |  |  |
+| 15049 | $-21033$ | 11 | 21 | 14 | 0 |  |  |  |
+| Motor rom | [1/min] |  |  |  |  |  |  |  |
+| $+29$ | $+0$ |
+
+Chunk 57:
+ilization | [\%] |  |  |  |  |  |  |  |
+| 15049 | $-21033$ | 11 | 21 | 14 | 0 |  |  |  |
+| Motor rom | [1/min] |  |  |  |  |  |  |  |
+| $+29$ | $+0$ | $+0$ | $+0$ | $+0$ | $+0$ |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+| I21 Warning | $:$ | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| I21 Li | tion: | - | 0 | 0 | 0 | 0 | 0 | 0 |
+| Inverter T |ax: | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| Drives re |ady: | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| no Ret | erence | $:$ | 0 | 0 | 0 | 0 | 0 | 0 |
+| Rees Release | : | - | 0 | 0 | 0 | 0 | 0 | 1 |
+| in Motion | $:$ | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+|  |  |  |  |  |  |  |  |  |
+
+
+| DIAG R | R |  |  |  |  |  |  |  |
+| :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+|  |  |  |  |  |  |  |  |  |
+| Motor | Temperature | [Degree] |  |  |  |  |  |  |
+| 254 | 254 | 0 | 0 |  |  |  |  |  |
+| Motor Utilization | [\%] |  |  |  |  |  |  |  |
+| 0 | 0 | 0 | 0 |  |  |  |  |  |
+| Motor rom | [1/min] |  |  |  |  |  |  |  |
+| $+0$ | $+0$ | $+0$ | $+0$ |  |  |  |  |  |
+|  |  |  |  |  |
+
+Chunk 58:
+|  |  |
+| 0 | 0 | 0 | 0 |  |  |  |  |  |
+| Motor rom | [1/min] |  |  |  |  |  |  |  |
+| $+0$ | $+0$ | $+0$ | $+0$ |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+| I21 Warning | $:$ | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| I21 Li | ation: | - | 0 | 0 | 0 | 0 | 0 | 0 |
+| Drives T | ax: | $:$ | 0 | 0 | 0 | 0 | 0 | 0 |
+| Drives 878 | $:$ | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| no Ret | erence | $:$ | 0 | 0 | 0 | 0 | 0 | 0 |
+| Rees Release | : | - | 0 | 0 | 0 | 0 | 0 | 1 |
+| in Motion | $:$ | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+|  |  |  |  |  |  |  |  |  |
+
+
+| DIAG R | R |  |  |  |  |  |  |  |
+| :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+
+
+| DIAG R | R |  |  |  |  |  |  |  |
+| :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+
+Chunk 59:
+:--: |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+
+
+| DIAG R | R |  |  |  |  |  |  |  |
+| :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |
+
+Chunk 60:
+|  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+
+![img-37.jpeg](img-37.jpeg)
+![img-38.jpeg](img-38.jpeg)
+![img-39.jpeg](img-39.jpeg)
+![img-40.jpeg](img-40.jpeg)
+
+| STROBE |  |  |  |  |  |
+| :--: | :--: | :--: | :--: | :--: | :--: |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+
+
+| STROBE | NC->PLC |  |  |  |
+| :--: | :--: | :--: | :--: | :--: |
+|  |  |  |  |  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+
+
+| $\mathrm{KY} .2 \ldots . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+Chunk 61:
+|  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+
+
+| $\mathrm{KY} .2 \ldots . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+![img-41.jpeg](img-41.jpeg)
+
+| PLC POSIT | PLC POSIT |  |
+| :--: | :--: | :--: |
+| ? |  |  |
+
+Display status of PLC positioning
+
+| PLCPOS PLC->NC |  |  |
+| :--: | :--: | :--: |
+|  |  |  |
+| K-RKIS | $+0.000$ | 0 |
+| Y-RKIS | $+0.000$ | 0 |
+| Z-RKIS | $+0.000$ | 0 |
+| B-RKIS | $+0.000$ | 0 |
+| C-RKIS | $+0.000$ | 0 |
+![img-42.jpeg](img-42.jpeg)
+
+Display documentation of the inputs and outputs
+
+| PLC Output/Input |  |
+| :--: | :--: |
+| I_Taste_NC_Start | $12132=0$ |
+| I_Taste_NC_Stop | $12131=1$ |
+|
+
+Chunk 62:
+ay documentation of the inputs and outputs
+
+| PLC Output/Input |  |
+| :--: | :--: |
+| I_Taste_NC_Start | $12132=0$ |
+| I_Taste_NC_Stop | $12131=1$ |
+| I_Taste_NC_Stop_Rchsen | $1 M 3999=1$ |
+| I_Taste_Eligang | $12141=0$ |
+| 0_Lampe_NC_Start | $1016=0$ |
+| 0_Lampe_NC_Stop | $1017=1$ |
+| I_Taste_Spindel_Start | $12142=0$ |
+| I_Taste_Spindel_Stop | $12143=0$ |
+| 0_Lampe_Spindel_Stop | $105=1$ |
+| 0_Lampe_Spindel_Start | $106=0$ |
+| I_Taste_Rchsen_Freifahren | $1 M 3226=0$ |
+| 0_Lampe_Rchsen_Freifahren | $1 M 3344=0$ |
+| Page down | (Page 1 of 21) |
+
+![img-43.jpeg](img-43.jpeg)
+Protect Key: When turned to ' 1 ', it will not be possible to edit the following:
+NC program
+Data tables
+![img-44.jpeg](img-44.jpeg)
+
+Offset values
+Work co-ordinates
+Macro values
+To enable editing of the above, turn the key to ' 0 '
+# 7.5 M-function Codes 
+
+|  | Function Description |
+| :--: | :--: |
+| MOO | Program stop, spindle \& coolant. |
+| MO1 | Optional Program stop, spindle \& coolant. |
+| MO2 | End of
+
+Chunk 63:
+Function Description |
+| :--: | :--: |
+| MOO | Program stop, spindle \& coolant. |
+| MO1 | Optional Program stop, spindle \& coolant. |
+| MO2 | End of program, spindle \& coolant. |
+| MO3 | Spindle right CW ON |
+| MO4 | Spindle left CCW ON |
+| MO5 | Spindle OFF |
+| MO7 | Coolant side ON |
+| MO8 | Coolant ON |
+| MO9 | Coolant OFF |
+| M10 | Clamping axes |
+| M11 | Unclamping axes |
+| M13 | Spindle right coolant ON |
+| M14 | Spindle left coolant ON |
+| M19 | Spindle orientation 0 Degree |
+| M20 | Spindle orientation cycle 13 |
+| M21 | Start index table |
+| M22 | Spindle workpiece blast ON |
+| M23 | Spindle workpiece blast OFF |
+| M30 | End of program |
+| M31 | Working without M3/M4 |
+| M32 | Working area monitoring OFF |
+| M35 | ATLM blast ON |
+| M36 | ATLM blast OFF |
+| M37 | OIL MIST OFF |
+| M40 | Coolant floor clean OFF |
+| M41 | Coolant floor clean ON |
+| M44 | Clamping mode off axis 4 |
+| M45 | Clamping mode off axis 5 |
+| M46 | Clamping mode off axis 6 |
+|  | Function Description
+
+Chunk 64:
+nt floor clean ON |
+| M44 | Clamping mode off axis 4 |
+| M45 | Clamping mode off axis 5 |
+| M46 | Clamping mode off axis 6 |
+|  | Function Description |
+| :-- | :-- |
+| M47 | Clamping mode off axis 7 |
+| M48 | Clamping mode off axis 8 |
+| M49 | Clamping mode off axis 9 |
+| M50 | Chip conveyor ON |
+| M51 | Chip conveyor OFF |
+| M61 | Alternating table 1 |
+| M62 | Alternating table 2 |
+| M64 | Clamping mode on axis 4 |
+| M65 | Clamping mode on axis 5 |
+| M66 | Clamping mode on axis 6 |
+| M67 | Clamping mode on axis 7 |
+| M68 | Clamping mode on axis 8 |
+
+# 7.6 User Definable Parameters 
+
+7.6.1 Timer table
+
+| NO | ADDRESS | DATA | DISCRIPTION |
+| :--: | :--: | :--: | :--: |
+| 01 | MP4120.30 |  | Coolant floor clean on duration timer |
+| 02 | MP4120.31 |  | Coolant floor clean off duration timer |
+| 03 | MP4210.38 |  | Aluminum chip alarm timer |
+| 04 | MP4210.39 |  | Steel chip alarm timer |
+# 7.6.2 Option bit parameter 
+
+| Parameter | Description |
+| :--: | :--: |
+| MP4310.0 | General
+
+Chunk 65:
+timer |
+| 04 | MP4210.39 |  | Steel chip alarm timer |
+# 7.6.2 Option bit parameter 
+
+| Parameter | Description |
+| :--: | :--: |
+| MP4310.0 | General parameter for the PLC <br> \$0001 - Power fail on <br> \$0008 - Spindle without tool |
+| MP4310.1 | \$0001 - No spindle stop with key NC stop <br> \$0002 - TNC shut down after END PGM <br> \$1000 - Tool change from Tool call block |
+| MP4310.2 | \$0001 - Start-up procedure active <br> \$0002 - Guard inactive <br> \$0004 - M3/M4/M19 monitoring for milling feed rate inactive <br> \$0008 - Alternate table / pallet change inactive <br> \$0010 - Reference automatically inactive <br> \$0020 - NC soft key inactive <br> \$0040 - Tool in spindle not monitored <br> \$0080 - Tool in magazine not monitored <br> \$0100 - T0 required for T-auto <-> T-manu <br> \$0200 - TC position manual inactive <br> \$0400 - Automatic guard unlock on END PGM, M02, M03 <br> \$0800 - Display standby pocket number inactive <br> \$1000 - Temperature compensation active
+
+Chunk 66:
+$0400 - Automatic guard unlock on END PGM, M02, M03 <br> \$0800 - Display standby pocket number inactive <br> \$1000 - Temperature compensation active <br> \$2000 - TC magazine load T0 necessary <br> \$4000 - PLC preset TNC:\Datum\PRESET.TAB active <br> \$8000 - Spindle torque monitoring inactive |
+| MP4310.3 | \$0001 - USE UV150 or UV140 without pw210 <br> \$0002 - TC position auto X Y A active |
+| MP4310.4 | \$0001- Cabinet door by pass <br> \$0002 - Headstock covered by pass <br> \$0004 - Coolant level by pass <br> \$0008 - Coolant filter by pass <br> \$0010 - Lubricant level by pass <br> \$0020 - Pneumatic pressure by pass <br> \$0040 - Oil chiller by pass <br> \$0080 - Oil chiller over load by pass |
+# 7.6.3 Tool setting in tool table 
+
+## Tool setting process:
+
+1. In manual mode, press TOOL TABLE on screen soft key.
+2. Select tool table edit is ON. Tool table editing function in enable.
+
+## Setting explanation:
+
+![img-45.jpeg](img-45.jpeg)
+
+| abbreviate | description |
+| :--: |
+
+Chunk 67:
+table edit is ON. Tool table editing function in enable.
+
+## Setting explanation:
+
+![img-45.jpeg](img-45.jpeg)
+
+| abbreviate | description |
+| :--: | :-- |
+| T | Number by which the tool is call in program |
+| Name | Name by which the tool is call in program |
+| L | Value for tool length compensation |
+| R | Compensation value for tool radius R |
+| R2 | Tool radius R2 for toroid cutters |
+| DL | Delta value for tool length L |
+| DR | Delta value for tool radius R |
+| DR2 | Delta value for tool radius R2 |
+| LCUTS | Tool length of the tool for cycle 22 |
+| ANGLE | MAX plunge angle of the tool - cut in Cycle 22 and 208 |
+| TL | Set tool locked |
+| RL | Number of a replacement tool |
+| TIME1 | Max tool life in minute |
+| TIME2 | Max tool life in minutes during in tool call |
+| CUR.TIME | Current age of the tool in minutes |
+| DOC | Comment on Tools |
+| CUT | Number of teeth |
+| LTOL | Permissible deviation from tool length L for wear detection |
+| RTOL | Permissible deviation from tool
+
+Chunk 68:
+t on Tools |
+| CUT | Number of teeth |
+| LTOL | Permissible deviation from tool length L for wear detection |
+| RTOL | Permissible deviation from tool length R for wear detection |
+User Manual MV154 series \& MV204 series, Heidenhain iTNCS30
+
+| abbreviate | description |
+| :--: | :-- |
+| DIRECT | Cutting direction of the tool measuring the tool during rotation |
+| PLC | Information on this tool that is to be sent to PLC |
+| TT:L-OFFS | Tool length measurements |
+| TT:R-OFFS | Tool length measurements |
+| LBREAK | Permissible deviation from tool length $L$ for breakage detection |
+| RBREAK | Permissible deviation from tool radius $R$ for breakage detection |
+| TYPE | Tool type |
+| TMAT | Tool material |
+| CDT | Cutting data table |
+| PLC-VAL | Value of this tool that is to be sent to PLC |
+| CAL-OF1 | During calibration the TNC stores in this column the center <br> misalignment in the reference axis of the 3-D probe, if a tool number <br> is indicated in the calibration menu |
+|
+
+Chunk 69:
+res in this column the center <br> misalignment in the reference axis of the 3-D probe, if a tool number <br> is indicated in the calibration menu |
+| CAL-OF2 | During calibration the TNC stores in this column the center <br> misalignment in the minor axis of the 3-D probe, if a tool number is <br> indicated in the calibration menu |
+| CAL-ANG | During calibration the TNC stores in this column the spindle angle at <br> which the 3-D probe was calibrated, if a tool number is indicated in <br> the calibration menu |
+| PTYP | Tool type for evaluation in the pocket table |
+| NMAX | Limits spindle speed of this tool |
+
+# Tool initial and Larger tool setting process 
+
+1. In manual mode, press POCKET TABLE on screen soft key.
+2. Select table edit is ON. Pocket table editing function in enable.
+3. Press RESET POCKET TABLE, tool number on screen would be arrangement in sequence.
+4. Set $F$ after identified pocket number and $L$ at neighbor pockets for number for Larger tool setting
+# 7.7
+
+Chunk 70:
+creen would be arrangement in sequence.
+4. Set $F$ after identified pocket number and $L$ at neighbor pockets for number for Larger tool setting
+# 7.7 Machine floor space 
+
+## MV154E \& MV154P
+
+![img-46.jpeg](img-46.jpeg)
+
+MV154EL \& MV154PL
+![img-47.jpeg](img-47.jpeg)
+# MV204C \& MV205C Series 
+
+| A | V | 97/2 | 2,880 |
+| :--: | :--: | :--: | :--: |
+|  |  | $\frac{10}{150}$ | 3,230 |
+|  |  | $\frac{5}{7.5}$ | 2,880 |
+|  |  | 0 |  |
+
+![img-48.jpeg](img-48.jpeg)
+
+MV204CL \& MV205CL Series
+
+|  |  | 10 | 3,030 |
+| :--: | :--: | :--: | :--: |
+|  |  | $\frac{15}{150}$ | 3,430 |
+|  |  | $\frac{5}{7.5}$ | 3,030 |
+
+![img-49.jpeg](img-49.jpeg)
+![img-50.jpeg](img-50.jpeg)
+
+MV204CU
+![img-51.jpeg](img-51.jpeg)
+# UX300 
+
+![img-52.jpeg](img-52.jpeg)
+# 7.8 ATC service operation 
+
+In manual mode, TC can be activated in one single command by HELP FUNCTION. PRESS MODE -> HELP soft key, enter help function with service screen. Follow with each instruction to do ATC service job.
+\#301 S to toolchange
+
+Chunk 71:
+CTION. PRESS MODE -> HELP soft key, enter help function with service screen. Follow with each instruction to do ATC service job.
+\#301 S to toolchange position
+\#302 Z to toolchange position
+\#305 Tool unclamping
+\#306 Tool clamping
+\#309 Tool pocket put out
+\#310 Tool pocket put in
+\#311 Tool arm to unclamping pos
+\#312 Tool arm to clamping pos
+\#313 Tool arm to basic pos
+\#314 Tool arm back to clamping pos
+\#315 Tool arm back to unclamping pos
+\#316 Tool arm back to basic pos
+\#317 Magazine turn cw (right)
+\#318 Magazine turn ccw (left)
+\#319 Magazine reference
+\#320 Delete spindle status (TO)
+iTNC 530 Provides HELP SCREEN function for :
+
+- Set -up tools as installation if need restart adjust tools.
+- Trouble-shooting as :
+
+1. EMG-stop button has been pressed.
+2. Air supply has lost suddenly or pressure too low .
+3. Mechanical interference.
+4. Power shut off suddenly.
+
+## WARNING!
+
+Each step has set up carefully through PLC protection, alarm will display upper, lower to show message
+
+Chunk 72:
+ence.
+4. Power shut off suddenly.
+
+## WARNING!
+
+Each step has set up carefully through PLC protection, alarm will display upper, lower to show message whether function is O.K ?then can continue next step.
+Due to ARM can be rotated CW or CCW which selects in contents of characters.
+Only Manual \& Hand wheel can be operated.
+# 7.9 Table C A axes service-points (Table Side) 
+
+![img-53.jpeg](img-53.jpeg)
+as above photos layout of $4^{\text {th }} \& 5^{\text {th }}$ axis components
+(A) Location of C-Axis transmition Mechanism (Motor \& Gear).
+(B) 4-th and 5-th axes electric wiring quick connectors.
+(C) A-axis( 5 h ) travel limit "+" "-" swatches .
+(D) A-axis( 5 t ) oil-air clamp/unclamp limit switches .
+(E) A-axis( 5 h ) oil-air clamp/unclamp hydroid pipes
+(F) A-axis( 5 t ) oil-air clamp/unclamp cylinder unit .
+(G) C-axis( 4 t ) oil-air clamp/unclamp cylinder unit .
+
+H) A-axis( 5t) air-cylinder counter-balance air-flow adjust valve .
+(1) C-axis( 4t) oil-air clamp/unclamp cylinder solenoid
+
+Chunk 73:
+p/unclamp cylinder unit .
+
+H) A-axis( 5t) air-cylinder counter-balance air-flow adjust valve .
+(1) C-axis( 4t) oil-air clamp/unclamp cylinder solenoid valve.
+A-axis( 5t) oil-air clamp/unclamp cylinder solenoid valve.
+$4^{-t h}$ Axis \& $5^{\text {th }}$ axis Rotary system I/O signal
+
+1. " unclamping axis C" 123
+2. " clamping axis C" 122
+3. " clamping axis C" O35
+4. " unclamping axis A" 192
+5. " clamping axis A" 191
+6. " clamping axis A" O10
+7. " unclamping axis C" 123
+8. " clamping axis C" 122
+9. " clamping axis C" O35
+10." unclamping axis A" 192
+11." clamping axis A" 191
+12." clamping axis A" O10
+# 7.10 Table C A axes datum setting : (check method) 
+
+HEIDENHAIN 5-Axes basic accuracy Measure steps:
+
+1. Use touch probe measure center of $C$ axis table adjust MP960 to math with spindle center. ( for MP $960 \times \& Y$ )
+
+Program as below:
+L XO YO ZO RO F5000
+L X32.5 RO F1000
+L X-32.5
+L XO
+L Y32.5
+L Y-32.5
+L YO
+L Z250
+2. MP7530.4 Y direction offset use touch probe measure C axis
+
+Chunk 74:
+s below:
+L XO YO ZO RO F5000
+L X32.5 RO F1000
+L X-32.5
+L XO
+L Y32.5
+L Y-32.5
+L YO
+L Z250
+2. MP7530.4 Y direction offset use touch probe measure C axis outside top compare A-90 and A90 difference data
+Z1-Z2 =MP7530.4 (MMK item 8)
+2
+If Z1 is high set negative. Z1 is low set positive
+![img-54.jpeg](img-54.jpeg)
+3.Use 130 mm gauge measure spindle nose to C axis table distance
+![img-55.jpeg](img-55.jpeg)
+
+EXP:Z DATUM=-475.0 MP7530.2=-475.0+(-130.0)=-605.0
+4. Put Touch probe in spindle use same gauge measure tool length insert data to tool table NO" 1"
+Executes TOOL CALL 1 Z by MDI mode (Read tool compensation)
+![img-56.jpeg](img-56.jpeg)
+5.Install a square parts on table make parallel with $X$ axis .Move tool probe tip to rear of parts. $X$ axis keep on machine coordinate 0.000 position .let $Y$ direction touch $0.10 \sim 0.15 \mathrm{~mm}$ only .set datum X0/Y0/Z0.
+![img-57.jpeg](img-57.jpeg)
+6. Input program as below:
+
+TOOL CALL 1 Z
+L X0 Y0 ZO C0 A0 R0
+
+Chunk 75:
+ouch $0.10 \sim 0.15 \mathrm{~mm}$ only .set datum X0/Y0/Z0.
+![img-57.jpeg](img-57.jpeg)
+6. Input program as below:
+
+TOOL CALL 1 Z
+L X0 Y0 ZO C0 A0 R0 F2000
+M128
+C90.F1000
+C180.
+C270.
+C360.
+Z200.
+M129
+Measure 4 direction date compensation MP960 X \& Y until all data is close .
+( this machine coordinate recalibrate is to minor adjust again of value in step
+
+No. 1 X \& Y value ).
+
+Summarize of above important item of machine parameters MP:
+
+MP 960.
+MP 7530.2
+MP 7530.4
+TOOL-LENGTH MEASURE ( or Probe )
+
