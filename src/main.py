@@ -4,10 +4,17 @@ import ollama
 from pymilvus import MilvusClient
 import uvicorn
 import os
+from pathlib import Path
 from dotenv import load_dotenv
 
+# LOAD .env FILE
+current_dir = os.getcwd()
+path = Path(current_dir)
+BASE_DIR = path.parent  # Go one level up
+
+load_dotenv(BASE_DIR / ".env")
+
 app = FastAPI()
-load_dotenv()
 
 # Initialize Milvus client
 milvus_client = MilvusClient(uri=f"http://{os.getenv('MILVUS_CLIENT_URL')}:{os.getenv('MILVUS_CLIENT_PORT')}")
