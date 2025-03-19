@@ -1,5 +1,7 @@
 ### How to run the project?
 
+## First Run
+
 1. git clone this repository
 
 ```bash
@@ -23,3 +25,11 @@ docker-compose up -d
 5. run `main.py` to run the server
 
 6. try call the server using call.py
+
+## After First Run
+
+Run this command for restart the docker:
+
+```bash
+docker-compose restart
+```
