@@ -180,7 +180,7 @@ def check_login(username, password):
     
     return False
 
-@app.get("/admin/create_user")
+@app.post("/admin/create_user")
 def create_user(username, password, created_by):
     """Create a new admin user"""
     if not os.path.exists(USERS_FILE):
@@ -236,16 +236,13 @@ def create_initial_admin():
     
     return True
 
-def change_user_password():
-    pass
-
 @app.get("/admin/get_users")
 def get_users_file():
     with open(USERS_FILE, 'r') as f:
         users = json.load(f)
     return users
 
-@app.get("/admin/verify_password")
+@app.post("/admin/verify_password")
 def verfiy_password(username, pass_input):
     with open(USERS_FILE, 'r') as f:
         users = json.load(f)
@@ -259,7 +256,7 @@ def verfiy_password(username, pass_input):
     else:
         return True
 
-@app.get("/admin/change_password")
+@app.put("/admin/change_password")
 def change_password(username, new_password):
     new_hash, new_salt = hash_password(new_password)
 
@@ -271,18 +268,6 @@ def change_password(username, new_password):
 
     with open(USERS_FILE, 'w') as f:
         json.dump(users, f, indent=4)
-
-# 
-def get_user_info():
-    pass
-
-#
-def update_user_info():
-    pass
-
-#
-def add_user():
-    pass
 
 # 
 def create_testset():
