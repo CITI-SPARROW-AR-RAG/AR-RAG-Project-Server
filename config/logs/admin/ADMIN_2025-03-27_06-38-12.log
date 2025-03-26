@@ -1,0 +1,4 @@
+2025-03-27 06:38:12,636 - Start of logging session at: 2025-03-27 06:38:12
+2025-03-27 06:38:22,722 - \u274c Failed to connect to Milvus: <MilvusException: (code=2, message=Fail connecting to server on localhost:19530, illegal connection params or server unavailable)>
+2025-03-27 06:38:23,013 - Start of logging session at: 2025-03-27 06:38:23
+2025-03-27 06:38:33,208 - \u274c Failed to connect to Milvus: <MilvusException: (code=2, message=Fail connecting to server on localhost:19530, illegal connection params or server unavailable)>

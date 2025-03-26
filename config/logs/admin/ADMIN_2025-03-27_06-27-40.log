@@ -1,0 +1,7 @@
+2025-03-27 06:27:40,240 - Start of logging session at: 2025-03-27 06:27:40
+2025-03-27 06:27:50,458 - \u274c Failed to connect to Milvus: <MilvusException: (code=2, message=Fail connecting to server on localhost:19530, illegal connection params or server unavailable)>
+2025-03-27 06:27:50,465 - Form data requires "python-multipart" to be installed. 
+You can install "python-multipart" with: 
+
+pip install python-multipart
+

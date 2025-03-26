@@ -2,9 +2,10 @@ from pymilvus import Collection, FieldSchema, CollectionSchema, DataType, Index,
 from dotenv import load_dotenv
 from pathlib import Path
 from tqdm import tqdm
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, UploadFile, File, Form
+from fastapi.responses import StreamingResponse
 
-import os, logging, ollama, time, json, hashlib, secrets, string, datetime, uvicorn
+import os, logging, ollama, time, json, hashlib, secrets, string, datetime, uvicorn, uuid
 
 
 # GET PROJECT BASE DIR
@@ -50,6 +51,15 @@ try:
     logger.info(f"✅ Successfully connected to Milvus at {MILVUS_URL}")
 except Exception as e:
     logger.error(f"❌ Failed to connect to Milvus: {str(e)}")
+
+
+
+FILES_DIR = Path(__file__).parent.parent / "data" / "raw"
+FILES_INDEX = Path(__file__).parent.parent / "data" / "raw" / "files_index.json"
+
+if not os.path.exists(FILES_INDEX):
+    with open(FILES_INDEX, 'w') as f:
+        json.dump({}, f)
 
 #
 def emb_text(text):
@@ -139,9 +149,122 @@ def remove_file_from_vdb():
     pass
 
 # 
-def upload_file():
-    pass
+@app.post("/admin/upload_file")
+async def upload_file(
+    username: str = Form(...),
+    uploaded_file: UploadFile = File(...),
+    in_vector_db: bool = Form(False)
+):
+    """Save an uploaded file and record its metadata"""
+    
+    # Generate a unique ID for the file
+    file_id = str(uuid.uuid4())
+    
+    # Extract file extension
+    original_filename = uploaded_file.filename
+    ext = os.path.splitext(original_filename)[1]
+    
+    # Create a unique filename with the original extension
+    filename = f"{file_id}{ext}"
+    file_path = os.path.join(FILES_DIR, filename)
+    
+    # Save the file
+    with open(file_path, "wb") as f:
+        f.write(await uploaded_file.read())  # Use `await` karena UploadFile bersifat async
+    
+    # Get file size
+    file_size = os.path.getsize(file_path)
+    
+    # Record metadata
+    if not os.path.exists(FILES_INDEX):
+        files_index = {}
+    else:
+        with open(FILES_INDEX, 'r') as f:
+            files_index = json.load(f)
+    
+    files_index[file_id] = {
+        "original_filename": original_filename,
+        "stored_filename": filename,
+        "upload_time": str(datetime.datetime.now()),
+        "uploader": username,
+        "file_size_bytes": file_size,
+        "file_type": uploaded_file.content_type,
+        "in_vector_db": in_vector_db,
+        "path": file_path
+    }
+    
+    with open(FILES_INDEX, 'w') as f:
+        json.dump(files_index, f, indent=4)
+    
+    return {"file_id": file_id, "metadata": files_index[file_id]}
 
+@app.get("/admin/list_files")
+def list_files():
+    """Get a list of all uploaded files with their metadata"""
+    if not os.path.exists(FILES_INDEX):
+        return {}
+    
+    with open(FILES_INDEX, 'r') as f:
+        files_index = json.load(f)
+    
+    return files_index
+
+def get_file_metadata(file_id):
+    """Get metadata for a specific file"""
+    if not os.path.exists(FILES_INDEX):
+        return None
+    
+    with open(FILES_INDEX, 'r') as f:
+        files_index = json.load(f)
+    
+    return files_index.get(file_id)
+
+@app.get("/admin/download_file")
+def download_file(file_id: str):
+    """Get file data for download"""
+    file_metadata = get_file_metadata(file_id)  # Pastikan fungsi ini sudah ada
+    
+    if not file_metadata:
+        return {"error": "File not found"}
+    
+    file_path = os.path.join(FILES_DIR, file_metadata["stored_filename"])
+    
+    if not os.path.exists(file_path):
+        return {"error": "File data not found"}
+
+    # Streaming file ke client
+    return StreamingResponse(open(file_path, "rb"), media_type="application/octet-stream", headers={
+        "Content-Disposition": f"attachment; filename={file_metadata['original_filename']}"
+    })
+
+@app.delete("/admin/delete_file")
+def delete_file(file_id):
+    """Delete a file and its metadata"""
+    if not os.path.exists(FILES_INDEX):
+        return {"status": False, "message": "Files index not found"}
+    
+    with open(FILES_INDEX, 'r') as f:
+        files_index = json.load(f)
+    
+    if file_id not in files_index:
+        return {"status": False, "message": "File not found"}
+    
+    # Get the file info
+    file_info = files_index[file_id]
+    file_path = os.path.join(FILES_DIR, file_info["stored_filename"])
+    
+    # Delete the file if it exists
+    if os.path.exists(file_path):
+        os.remove(file_path)
+    
+    # Remove from index
+    del files_index[file_id]
+    
+    # Update index file
+    with open(FILES_INDEX, 'w') as f:
+        json.dump(files_index, f, indent=4)
+    
+    return {"status": True, "message": "File deleted successfully"}
 
 # Define the path to the users file
 USERS_FILE = Path(__file__).parent.parent / "data" / "users" / "users.json"
