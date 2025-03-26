@@ -1,0 +1,15 @@
+{
+  "eval_20250227_112427": {
+    "name": "Evaluation_20250227_1124",
+    "timestamp": "2025-02-27 11:24:27.406160",
+    "metrics": {
+      "precision": 0.85,
+      "recall": 0.78,
+      "f1_score": 0.81,
+      "mrr": 0.92,
+      "ndcg": 0.88
+    },
+    "num_queries": 3,
+    "file_path": "C:\\Users\\surya\\Downloads\\Rapi\\Vanessa\\App\\data\\evaluations\\eval_20250227_112427.json"
+  }
+}
