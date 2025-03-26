@@ -141,3 +141,39 @@ def remove_file_from_vdb():
 # 
 def upload_file():
     pass
+
+# 
+def get_user_info():
+    pass
+
+#
+def update_user_info():
+    pass
+
+# 
+def create_testset():
+    pass
+
+# 
+def get_testset_dataframe():
+    pass
+
+# 
+def get_testsets_info():
+    pass
+
+#
+def ragas_evaluation():
+    pass
+
+#
+def get_evaluations_info():
+    pass
+
+#
+def get_evaluation():
+    pass
+
+#
+def delete_evaluation_file():
+    pass
