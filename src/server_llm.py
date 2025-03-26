@@ -20,7 +20,7 @@ app = FastAPI()
 
 
 # Set up logging configuration
-log_filename = os.path.join(BASE_DIR, 'config', 'logs', f'RAG_{time.strftime("%Y-%m-%d_%H-%M-%S")}.log')
+log_filename = os.path.join(BASE_DIR, 'config', 'logs', 'llm', f'RAG_{time.strftime("%Y-%m-%d_%H-%M-%S")}.log')
 
 logging.basicConfig(
     filename=log_filename,                      # Log to file
