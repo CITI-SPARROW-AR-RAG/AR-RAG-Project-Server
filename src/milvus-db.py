@@ -117,7 +117,6 @@ def chunking_pdf(documents):
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=0)  
     return text_splitter.split_documents(documents)
 
-
 # add file to vector database
 @app.post("/admin/add_file_to_vdb")
 def add_file_to_vdb(file_id: str = Form(...), file_metadata: str = Form(...)):
