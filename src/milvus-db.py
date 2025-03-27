@@ -4,8 +4,12 @@ from pathlib import Path
 from tqdm import tqdm
 from fastapi import FastAPI, UploadFile, File, Form
 from fastapi.responses import StreamingResponse
+from sentence_transformers import SentenceTransformer
+from langchain_community.document_loaders import PyPDFLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+import numpy as np
 
-import os, logging, ollama, time, json, hashlib, secrets, string, datetime, uvicorn, uuid
+import os, logging, ollama, time, json, hashlib, secrets, string, datetime, uvicorn, uuid, torch
 
 
 # GET PROJECT BASE DIR
@@ -61,9 +65,11 @@ if not os.path.exists(FILES_INDEX):
     with open(FILES_INDEX, 'w') as f:
         json.dump({}, f)
 
-#
-def emb_text(text):
+
+def emb_text(text: str) -> list[float]:
+    """Generate embeddings using Ollama"""
     response = ollama.embeddings(model=EMBEDDING_MODEL, prompt=text)
+    #logger.info('reponse: ', response)
     return response["embedding"]
 
 #
@@ -80,7 +86,7 @@ def create_collection():
 
     # Define schema
     fields = [
-        FieldSchema(name="id", dtype=DataType.INT64, is_primary=True, auto_id=True),
+        FieldSchema(name="file_uuid", dtype=DataType.VARCHAR, max_length=36, is_primary=True),
         FieldSchema(name="text", dtype=DataType.VARCHAR, max_length=2048),
         FieldSchema(name="vector", dtype=DataType.FLOAT_VECTOR, dim=get_embedding_dimension())
     ]
@@ -103,8 +109,90 @@ def create_collection():
 
     return collection
 
+def load_pdf(path_to_pdf):
+    pdf_loader = PyPDFLoader(path_to_pdf)
+    return pdf_loader.load()
+
+def chunking_pdf(documents):
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=0)  
+    return text_splitter.split_documents(documents)
+
+
+# add file to vector database
+@app.post("/admin/add_file_to_vdb")
+def add_file_to_vdb(file_id: str = Form(...), file_metadata: str = Form(...)):
+    """
+    1. load the file
+    2. chunking pdf file
+    3. embed, then insert each chunk to vector database
+    4. update status in files_index.json
+    """
+
+    # Parse file_metadata if it was sent as a JSON string
+    file_metadata = json.loads(file_metadata)
+
+    document = load_pdf(file_metadata["path"])
+    chunks = chunking_pdf(document)
+
+    # chunks = load_chunks()
+    vector = [emb_text(chunk.page_content) for chunk in chunks]
+    
+    entities = [
+        {
+            "file_uuid": file_id,
+            "text": chunk.page_content,
+            "vector": emb
+        }
+        for chunk, emb in tqdm(zip(chunks, vector), desc="Processing embeddings")
+    ]
+
+    collection = Collection(name=COLLECTION_NAME)
+    collection.insert(entities)
+    collection.flush()
+
+    with open(FILES_INDEX, 'r') as f:
+        files = json.load(f)
+    
+    files[file_id]["in_vector_db"] = True
+
+    with open(FILES_INDEX, 'w') as f:
+        json.dump(files, f, indent=4)
+
+    return {"status": True, "message": "File added successfully"}
+
+# 
+@app.post("/admin/remove_file_from_vdb")
+def remove_file_from_vdb(file_id: str = Form(...)):
+    """
+    1. Remove all vectors associated with the file_id from the vector database.
+    2. Update the status in files_index.json.
+    """
+    # Connect to Milvus
+    collection = Collection(name=COLLECTION_NAME)
+
+    # Ensure collection exists and is loaded
+    collection.load()
+
+    # Delete vectors where file_uuid matches file_id
+    deletion_expr = f'file_uuid == "{file_id}"'
+    collection.delete(deletion_expr)
+    collection.flush()
+
+    # Update file index
+    if os.path.exists(FILES_INDEX):
+        with open(FILES_INDEX, 'r') as f:
+            files = json.load(f)
+        
+        if file_id in files:
+            files[file_id]["in_vector_db"] = False  # Mark as removed
+            
+            with open(FILES_INDEX, 'w') as f:
+                json.dump(files, f, indent=4)
+
+    return {"status": True, "message": "File removed successfully"}
+
 # Read the saved text chunks from the file
-def load_chunks():
+# def load_chunks():
     text_chunks = []
 
     with open(os.path.join(BASE_DIR, 'data', 'processed', 'chunks_output.txt'), "r", encoding="utf-8") as file:
@@ -123,30 +211,6 @@ def load_chunks():
             text_chunks.append(chunk.strip())
 
     return text_chunks
-
-# 
-def add_file_to_vdb(collection):
-    text_chunks = load_chunks()
-    embedding_vectors = [emb_text(text_chunk) for text_chunk in text_chunks]
-
-    # Correct list comprehension
-    entities = [
-        {
-            "text": text,
-            "vector": vector
-        }
-        for i, (text, vector) in enumerate(tqdm(zip(text_chunks, embedding_vectors), desc="Processing embeddings"))
-    ]
-
-    # Insert into Milvus
-    insert_result = collection.insert(entities)
-    collection.flush()
-    collection.load()
-    print(f"Data berhasil dimasukkan dengan total {len(text_chunks)} chunk.")
-
-# 
-def remove_file_from_vdb():
-    pass
 
 # 
 @app.post("/admin/upload_file")
@@ -423,4 +487,6 @@ def delete_evaluation_file():
 if __name__ == "__main__":
     import uvicorn
     create_initial_admin()
+    create_collection()
+    
     uvicorn.run("milvus-db:app", host="0.0.0.0", port=8000, reload=True)
