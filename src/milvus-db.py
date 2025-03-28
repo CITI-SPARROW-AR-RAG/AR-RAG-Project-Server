@@ -2,14 +2,17 @@ from pymilvus import Collection, FieldSchema, CollectionSchema, DataType, Index,
 from dotenv import load_dotenv
 from pathlib import Path
 from tqdm import tqdm
-from fastapi import FastAPI, UploadFile, File, Form
-from fastapi.responses import StreamingResponse
-from sentence_transformers import SentenceTransformer
+from fastapi import FastAPI, UploadFile, File, Form, HTTPException, Query
+from fastapi.responses import StreamingResponse, JSONResponse, FileResponse
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+from pydantic import BaseModel
 import numpy as np
+from pydantic import BaseModel
+import pandas as pd
+from datetime import datetime
 
-import os, logging, ollama, time, json, hashlib, secrets, string, datetime, uvicorn, uuid, torch
+import os, logging, ollama, time, json, hashlib, secrets, string, uvicorn, uuid, requests, glob
 
 
 # GET PROJECT BASE DIR
@@ -428,64 +431,134 @@ def get_users_file():
         users = json.load(f)
     return users
 
-@app.post("/admin/verify_password")
-def verfiy_password(username, pass_input):
+@app.get("/admin/verify_password")
+def verify_password(username: str, pass_input: str):
+    """Verify if the provided password matches the stored password for a user."""
     with open(USERS_FILE, 'r') as f:
         users = json.load(f)
 
     stored_hash = users[username]["password_hash"]
-    salt = users[username]["salt"]
-    old_hash, _ = hash_password(pass_input, salt)
+    stored_salt = users[username]["salt"]
 
-    if old_hash != stored_hash:
-        return False
-    else:
-        return True
+    # Hash the provided password using the stored salt
+    old_hash, _ = hash_password(pass_input, stored_salt)
+
+    return {"verified": old_hash == stored_hash}
 
 @app.put("/admin/change_password")
-def change_password(username, new_password):
+def change_password(username: str, new_password: str):
     new_hash, new_salt = hash_password(new_password)
 
     with open(USERS_FILE, 'r') as f:
         users = json.load(f)
     
+    if username not in users:
+        return {"success": False, "message": "User not found"}
+
     users[username]["password_hash"] = new_hash
     users[username]["salt"] = new_salt
 
     with open(USERS_FILE, 'w') as f:
         json.dump(users, f, indent=4)
+    
+    return {"success": True, "message": "Password changed successfully"}
 
-# 
-def create_testset():
-    pass
 
-# 
-def get_testset_dataframe():
-    pass
 
-# 
-def get_testsets_info():
-    pass
+# Define constants
+EVALUATIONS_DIR = Path(__file__).parent.parent / "data" / "evaluation"
+EVAL_INDEX = Path(__file__).parent.parent / "data" / "evaluation" / "evaluation_index.json"
+TESTSET_DIR = Path(__file__).parent.parent / "data" / "testset_generation"
 
-#
-def ragas_evaluation():
-    pass
 
-#
-def get_evaluations_info():
-    pass
+# Define Pydantic model to validate request body
+class QueryRequest(BaseModel):
+    queries: list[str]
 
-#
-def get_evaluation():
-    pass
+@app.post("/admin/get_queries_response")
+def get_queries_response(request: QueryRequest):
+    API_URL = "http://localhost:8080/query"
+    result = []
 
-#
-def delete_evaluation_file():
-    pass
+    for query in request.queries:
+        payload = {"question": query}
+        response = requests.post(API_URL, json=payload)
+
+        try:
+            response_data = response.json()
+        except Exception:
+            raise HTTPException(status_code=500, detail="Invalid response from query server")
+
+        response_data["question"] = query
+        result.append(response_data)
+
+    return {"responses": result}
+
+class TestsetRequest(BaseModel):
+    num_of_test: int  # Define input validation
+
+@app.post("/admin/create_testset_using_ragas")
+def create_testset_using_ragas(request: TestsetRequest):
+    """Create a testset and save as CSV"""
+
+    num_of_test = request.num_of_test  # Get input from request
+
+    # Generate dummy data
+    dummy_data = {
+        'question': [f"Question {i}" for i in range(num_of_test)],
+        'reference': [f"Reference {i}" for i in range(num_of_test)],
+        'retrieved_context': [f"Context {i}" for i in range(num_of_test)],
+    }
+    testset_df = pd.DataFrame(dummy_data)
+
+    # Save CSV file
+    file_name = datetime.now().strftime("testset_%Y%m%d_%H%M%S.csv")
+    file_path = os.path.join(TESTSET_DIR, file_name)
+    testset_df.to_csv(file_path, index=False)
+
+    # Return JSON response
+    return {
+        "success": True,
+        "message": "Testset data created successfully",
+        "file_name": file_name,
+        "data": testset_df.to_dict(orient="records")  # Convert DataFrame to list of dictionaries
+    }
+
+@app.get("/admin/testset_files")
+def get_testset_files_info():
+    """Retrieve testset file information from the server"""
+    testset_files = glob.glob(os.path.join(TESTSET_DIR, "testset_*.csv"))
+
+    if not testset_files:
+        return {"success": False, "message": "No testset files found", "files": []}
+
+    file_data = []
+    for testset_file in testset_files:
+        filename = os.path.basename(testset_file)
+        datetime_str = filename[8:-4]  # Extract timestamp
+        dt = datetime.strptime(datetime_str, "%Y%m%d_%H%M%S")  # Convert to datetime
+
+        file_data.append({
+            "datetime": dt.strftime("%Y-%m-%d %H:%M:%S"),
+            "filename": filename
+        })
+
+    # Sort files by newest first
+    file_data.sort(key=lambda x: x["datetime"], reverse=True)
+
+    return {"success": True, "message": "Testset files retrieved", "files": file_data}
+
+
+@app.get("/download")
+def download_testset(file: str = Query(..., description="Filename to download")):
+    """Download a testset file"""
+    file_path = os.path.join(TESTSET_DIR, file)
+    if os.path.exists(file_path):
+        return FileResponse(file_path, filename=file, media_type="text/csv")
+    return {"success": False, "message": "File not found"}
 
 if __name__ == "__main__":
-    import uvicorn
     create_initial_admin()
     create_collection()
     
-    uvicorn.run("milvus-db:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("milvus-db:app", host="127.0.0.1", port=8000, reload=True)

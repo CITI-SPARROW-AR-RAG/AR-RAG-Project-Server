@@ -1,0 +1,5 @@
+2025-03-28 09:01:54,147 - Start of logging session at: 2025-03-28 09:01:54
+2025-03-28 09:01:58,313 - question : What is AI?
+2025-03-28 09:01:58,345 - HTTP Request: POST http://127.0.0.1:11434/api/embeddings "HTTP/1.1 200 OK"
+2025-03-28 09:02:19,577 - question : How does ML work?
+2025-03-28 09:02:19,618 - HTTP Request: POST http://127.0.0.1:11434/api/embeddings "HTTP/1.1 200 OK"

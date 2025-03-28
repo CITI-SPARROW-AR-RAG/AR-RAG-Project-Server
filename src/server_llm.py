@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 import logging
 import time
 import numpy as np
+from pymilvus import Collection, connections
 
 
 current_dir = os.getcwd()
@@ -52,8 +53,11 @@ SERVER_HOST_PORT = int(os.getenv("SERVER_HOST_PORT"))
 #logging.info("MILVUS_URL: %s, Collection: %s", MILVUS_URL, COLLECTION_NAME)
 
 
+# Create a connection to Milvus
+connections.connect(alias="default", uri=MILVUS_URL)
 # Initialize Milvus client
 milvus_client = MilvusClient(uri=MILVUS_URL)
+
 
 class QueryRequest(BaseModel):
     question: str
@@ -109,6 +113,10 @@ def rerank_chunks(question_embedding, retrieved_chunks):
 async def query_rag(request: QueryRequest):
     logging.info(f"question : {request.question}")
     try:
+        # 1. Load the collection into memory
+        collection = Collection(COLLECTION_NAME)  # Get the collection
+        collection.load()  # Load it before searching
+
         # 1. Create embedding for the question
         question_embedding = emb_text(request.question)
         
@@ -117,10 +125,7 @@ async def query_rag(request: QueryRequest):
             collection_name=COLLECTION_NAME,
             data=[question_embedding],
             limit=3,
-            search_params={
-                "metric_type": MILVUS_METRIC_TYPE, 
-                "params": {}
-            },
+            search_params={"metric_type": "IP", "params": {}},
             output_fields=["text"]
         )
         # 3. Format retrieved contexts
@@ -142,9 +147,8 @@ async def query_rag(request: QueryRequest):
             sources=reranked_texts  # Return the reranked sources
         )
     
-
     except Exception as e:
         return {"error": str(e)}
 
 if __name__ == "__main__":
-    uvicorn.run(app, host=SERVER_HOST_NAME, port=SERVER_HOST_PORT)
+    uvicorn.run(app, host=SERVER_HOST_NAME, port=8080)

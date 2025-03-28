@@ -1,0 +1,6 @@
+2025-03-28 09:01:23,847 - Start of logging session at: 2025-03-28 09:01:23
+2025-03-28 09:01:23,975 - \u2705 Successfully connected to Milvus at http://localhost:19530
+2025-03-28 09:01:24,001 - Existing collection vanessa_rag_collection dropped!
+2025-03-28 09:01:24,043 - HTTP Request: POST http://127.0.0.1:11434/api/embeddings "HTTP/1.1 200 OK"
+2025-03-28 09:01:24,068 - \u2705 'vanessa_rag_collection' collection successfully created!
+2025-03-28 09:01:24,584 - \u2705 Index successfully created!

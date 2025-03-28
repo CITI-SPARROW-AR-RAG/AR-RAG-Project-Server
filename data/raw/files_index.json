@@ -38,5 +38,25 @@
         "file_type": "application/pdf",
         "in_vector_db": true,
         "path": "C:\\Users\\surya\\Downloads\\Rapi\\Vanessa\\server_latest\\AR-RAG-Project-Server-Docker\\data\\raw\\45256549-36b3-4ea8-93e0-8097d3d8a20c.pdf"
+    },
+    "31609ad0-23f0-4b55-9614-d554c4ab0a11": {
+        "original_filename": "iTNC530 \u6a5f\u68b0\u64cd\u4f5c\u624b\u518a MV154,MV154APC,MV204,UX300.pdf",
+        "stored_filename": "31609ad0-23f0-4b55-9614-d554c4ab0a11.pdf",
+        "upload_time": "2025-03-28 09:49:37.632511",
+        "uploader": "davian",
+        "file_size_bytes": 2115135,
+        "file_type": "application/pdf",
+        "in_vector_db": false,
+        "path": "C:\\Users\\surya\\Downloads\\Rapi\\Vanessa\\server_latest\\AR-RAG-Project-Server-Docker\\data\\raw\\31609ad0-23f0-4b55-9614-d554c4ab0a11.pdf"
+    },
+    "9b69441a-1740-410e-87e4-2a8926ea41f9": {
+        "original_filename": "iTNC530 \u6a5f\u68b0\u64cd\u4f5c\u624b\u518a MV154,MV154APC,MV204,UX300.pdf",
+        "stored_filename": "9b69441a-1740-410e-87e4-2a8926ea41f9.pdf",
+        "upload_time": "2025-03-28 09:49:40.830329",
+        "uploader": "davian",
+        "file_size_bytes": 2115135,
+        "file_type": "application/pdf",
+        "in_vector_db": true,
+        "path": "C:\\Users\\surya\\Downloads\\Rapi\\Vanessa\\server_latest\\AR-RAG-Project-Server-Docker\\data\\raw\\9b69441a-1740-410e-87e4-2a8926ea41f9.pdf"
     }
 }
