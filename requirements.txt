@@ -6,6 +6,7 @@ click==8.1.8
 comm==0.2.2
 debugpy==1.8.12
 decorator==5.1.1
+eval_type_backport==0.2.2
 executing==2.2.0
 fastapi==0.115.8
 grpcio==1.67.1
@@ -16,10 +17,13 @@ idna==3.10
 ipykernel==6.29.5
 ipython==8.32.0
 jedi==0.19.2
+jsonpath-python==1.0.6
 jupyter_client==8.6.3
 jupyter_core==5.7.2
 matplotlib-inline==0.1.7
 milvus-lite==2.4.11
+mistralai==1.5.1
+mypy-extensions==1.0.0
 nest-asyncio==1.6.0
 numpy==2.2.3
 ollama==0.4.7
@@ -52,6 +56,7 @@ starlette==0.45.3
 tornado==6.4.2
 tqdm==4.67.1
 traitlets==5.14.3
+typing-inspect==0.9.0
 typing_extensions==4.12.2
 tzdata==2025.1
 ujson==5.10.0

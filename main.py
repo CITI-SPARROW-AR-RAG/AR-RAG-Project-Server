@@ -9,6 +9,11 @@ import os
 import logging
 import time
 
+import pandas as pd
+from datetime import datetime
+import csv
+
+
 
 
 app = FastAPI()
@@ -29,6 +34,21 @@ initial_timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
 logger.info(f"Start of logging session at: {initial_timestamp}")
 
 
+# New function to save question and response to CSV
+def save_to_csv(question, answer):
+    csv_file = 'rag_qa_tracking.csv'
+    file_exists = os.path.isfile(csv_file)
+    
+    # Get current timestamp
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    # Write to CSV
+    with open(csv_file, 'a', newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        # Write header if file doesn't exist
+        if not file_exists:
+            writer.writerow(['timestamp', 'question', 'answer'])
+        writer.writerow([timestamp, question, answer])
 
 
 # load .env variable
@@ -38,7 +58,7 @@ MILVUS_URL = os.getenv("MILVUS_URL")
 COLLECTION_NAME = os.getenv("COLLECTION_NAME")
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL")
 LLM_MODEL = os.getenv("LLM_MODEL")
-SERVER_HOST_HOST = os.getenv("SERVER_HOST_HOST")
+SERVER_HOST_URL = os.getenv("SERVER_HOST_URL")
 SERVER_HOST_PORT = int(os.getenv("SERVER_HOST_PORT"))
 
 #logging.info("MILVUS_URL: %s, Collection: %s", MILVUS_URL, COLLECTION_NAME)
@@ -59,27 +79,42 @@ def emb_text(text: str) -> list[float]:
     #logger.info('reponse: ', response)
     return response["embedding"]
 
+
+#User prompt and system prompt adapted for testing - please see Editor for original version
+
 def format_prompt(context: str, question: str) -> list[dict]:
     """Format the prompt for the LLM"""
-    SYSTEM_PROMPT = """You are an AI assistant designed to support operators in the manufacturing environment. Your goal is to be precise, helpful, and responsive in assisting with tasks. Follow the user prompt instructions carefully."""
-    USER_PROMPT = f"""
-                You are a knowledgeable AI assistant designed to support operators in the manufacturing environment. Please follow these guidelines for responding:
+    SYSTEM_PROMPT = """You are an AI assistant supporting operators in a manufacturing environment. Your name is SPARROW.
+                Your behavior must follow these principles:
+                - Be precise, helpful, and responsive in all answers.
+                - When a user asks about procedures, respond in clear, step-by-step instructions using numbered or bulleted lists.
+                - If a question lacks sufficient detail, ask the user to clarify before answering.
+                - Only use the information provided in the context. Do not guess or add external knowledge.
+                - End each response by encouraging the user to ask additional questions.
 
-                1. If the question relates to procedures or guidelines with clear steps, respond in a structured manner using numbered lists or bullet points (e.g., Step 1: ..., Step 2: ...). Ensure that each step is listed clearly and individually, separating each instruction for easy understanding.
-                2. If the question is unclear or lacks sufficient details, kindly ask the user for clarification to provide an accurate response.
-                3. If you do not have the information available in your database, state that you're unable to provide an answer at this time.
-                4. After sending your initial response, send a follow-up message a few seconds later encouraging the user to ask if they have further inquiries.
+                Maintain a professional but approachable tone at all times."""
+    
+    USER_PROMPT = f""" You are a knowledgeable AI assistant supporting operators in a manufacturing environment. Your name is SPARROW.
+                Follow these detailed instructions to answer the user's question.
 
-                Use these context passages to answer the question. Include only information from the context:
-                Context: {context}
-                Question: {question}
+                Instructions:
+                1. If the question involves a task, procedure, or guideline, format your answer as a step-by-step list using numbered or bullet points.
+                2. Separate each step clearly for ease of understanding.
+                3. If the question is unclear, missing context, or ambiguous, ask the user to clarify before attempting an answer.
+                4. Only use the information provided in the context below. Do not guess or invent information.
+                5. End your response with a polite prompt encouraging further questions. For example: "Let me know if you'd like help with anything else."
 
-                After your response, encourage the user to ask further questions if needed.
+                Context:
+                {context}
+
+                Question:
+                {question}
                 """
-
+    logging.info(f"User Prompt: {USER_PROMPT}")
     return [
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user", "content": USER_PROMPT}
+            
     ]
 
 def rerank_chunks(question_embedding, retrieved_chunks):
@@ -107,7 +142,7 @@ async def query_rag(request: QueryRequest):
         search_results = milvus_client.search(
             collection_name=COLLECTION_NAME,
             data=[question_embedding],
-            limit=3,
+            limit=2,
             search_params={"metric_type": "IP", "params": {}},
             output_fields=["text"]
         )
@@ -122,8 +157,11 @@ async def query_rag(request: QueryRequest):
         messages = format_prompt(context, request.question)
         response = ollama.chat(model=LLM_MODEL, messages=messages) 
         
-        
+        logging.info(f"LLM_Model: {LLM_MODEL}")
         logging.info(f"LLM response: {response['message']['content']}")
+#print response to console
+        print(response["message"])
+
 
         return QueryResponse(   
             answer=response["message"]["content"],
@@ -135,5 +173,6 @@ async def query_rag(request: QueryRequest):
     except Exception as e:
         return {"error": str(e)}
 
+
 if __name__ == "__main__":
-    uvicorn.run(app, host=SERVER_HOST_HOST, port=SERVER_HOST_PORT)
+    uvicorn.run(app, host=SERVER_HOST_URL, port=SERVER_HOST_PORT)
