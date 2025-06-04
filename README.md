@@ -1,4 +1,10 @@
 # AR-RAG-Project-Server
+### UI
+![AR-RAG UI](documentation/figures/SPARROWUI.png)
+
+### RAG Workflow
+![RAG Workflow](documentation/figures/systemarch2.jpg)
+
 
 ## Overview
 The AR-RAG-Project-Server is a comprehensive framework designed to facilitate Retrieval-Augmented Generation (RAG) workflows using Milvus, an advanced open-source vector database. This project integrates various tools and frameworks to enable efficient document retrieval, embedding similarity search, and AI-driven applications.
